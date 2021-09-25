@@ -113,7 +113,6 @@ beautified beautify
 became become
 became_known become_known
 becomes_known become_known
-bed bed
 bedded bed
 bedding bed
 bedevilled bedevil
@@ -171,7 +170,6 @@ biassed bias
 biassing bias
 bidden bid
 bidding bid
-bing bing
 binned bin
 binning bin
 bird-dogged bird-dog
@@ -1462,7 +1460,6 @@ podded pod
 podding pod
 pommelled pommel
 pommelling pommel
-popes popes
 popped pop
 popping pop
 potted pot
@@ -1567,7 +1564,6 @@ recopied recopy
 rectified rectify
 recurred recur
 recurring recur
-red red
 red-pencilled red-pencil
 red-pencilling red-pencil
 redded red redd
@@ -1707,7 +1703,6 @@ scudding scud
 scummed scum
 scumming scum
 scurried scurry
-seed seed
 seen see
 sent send
 setting set
@@ -1724,7 +1719,6 @@ sharecropped sharecrop
 sharecropping sharecrop
 shat shit
 shaven shave
-shed shed
 shedding shed
 shellacked shellac
 shellacking shellac
@@ -2077,7 +2071,6 @@ tasselling tassel
 tatted tat
 tatting tat
 taught teach
-taxis taxis
 taxying taxi
 teaselled teasel
 teaselling teasel
@@ -2085,7 +2078,6 @@ tedded ted
 tedding ted
 tepefied tepefy
 terrified terrify
-testes testes
 testified testify
 thinking_the_world_of think_the_world_of
 thinks_the_world_of think_the_world_of
@@ -2350,7 +2342,6 @@ webbed web
 webbing web
 wedded wed
 wedding wed
-weed weed
 went go
 went_deep go_deep
 wept weep

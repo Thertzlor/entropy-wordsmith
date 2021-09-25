@@ -135,7 +135,6 @@ antisera antiserum
 antitheses antithesis
 antitragi antitragus
 antra antrum
-anus anus
 aortae aorta
 aphelia aphelion
 aphides aphis
@@ -147,7 +146,6 @@ apophyses apophysis
 aposiopeses aposiopesis
 apothecia apothecium
 apotheoses apotheosis
-apparatus apparatus
 appendices appendix
 appoggiature appoggiatura
 apsides apsis
@@ -162,7 +160,6 @@ archesporia archesporium
 archipelagoes archipelago
 arcs-boutants arc-boutant
 areolae areola
-argali argali
 argumenta argumentum
 ariette arietta
 aristae arista
@@ -695,11 +692,9 @@ eyeteeth eyetooth
 fabliaux fabliau
 faciae facia
 faculae facula
-faeroese faeroese
 fallfishes fallfish
 famuli famulus
 farmers-general farmer-general
-faroese faroese
 farragoes farrago
 fasciae fascia
 fasciculi fasciculus
@@ -760,7 +755,6 @@ foci focus
 folia folium
 fora forum
 foramina foramen
-forceps forceps
 forefeet forefoot
 foreteeth foretooth
 formicaria formicarium
@@ -799,7 +793,6 @@ gametoecia gametoecium
 gammadia gammadion
 ganglia ganglion
 garfishes garfish
-gas gas
 gasses gas
 gastrulae gastrula
 gateaux gateau
@@ -819,7 +812,6 @@ gentes gens
 gentlemen-at-arms gentleman-at-arms
 gentlemen-farmers gentleman-farmer
 genua genu
-genus genus
 germina germen
 gesellschaften gesellschaft
 gestalten gestalt
@@ -860,7 +852,6 @@ gorgoneia gorgoneion
 gospopoda gospodin
 governors_general governor_general
 goyim goy
-gps gps
 grafen graf
 graffiti graffito
 grandchildren grandchild
@@ -949,7 +940,6 @@ hili hilus
 himatia himation
 hippocampi hippocampus
 hippopotami hippopotamus
-his his
 hoboes hobo
 hogfishes hogfish
 homunculi homunculus
@@ -1014,8 +1004,6 @@ involucella involucellum
 involucra involucre
 involucra involucrum
 irides iris
-irs irs
-is is
 ischia ischium
 isthmi isthmus
 jackeroos jackaroo jackeroo
@@ -1118,7 +1106,6 @@ lomenta lomentum
 longobardi longobard
 loricae lorica
 loups-garous loup-garou
-luba luba
 lubritoria lubritorium
 lumbus lumbi
 lumina lumen
@@ -1323,7 +1310,6 @@ nevi nevus
 nibelungen nibelung
 nidi nidus
 nielli niello
-nilgai nilgai
 nimbi nimbus
 nimbostrati nimbostratus
 noctilucae noctiluca
@@ -2034,7 +2020,6 @@ viatica viaticum
 viatores viator
 vibracula vibraculum
 vibrissae vibrissa
-vice-chairman vice-chairman
 villi villus
 vimina vimen
 vincula vinculum
