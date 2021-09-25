@@ -1,172 +1,24 @@
-from secrets import randbelow
+from modules.phrase_generator import mainProcess
 from math import inf
+from argparse import ArgumentParser
 
-def getList(path):
-   with open(path,'r') as resRaw:
-     res = [m.replace('_',' ').strip() for m in resRaw.readlines() if not m.startswith('  ')]
-     res.sort(key=len);
-   return res
+parser = ArgumentParser(description='Welcome to Entropy Wordsmith!',prog='Entropy Wordsmith')
+parser.add_argument('-c','--count', type=int, default=20,help="The number of passphrases to generate. Defaults to 20.",metavar='')
+parser.add_argument('-i','--include_number', action="store_true",help="If the password is required to contain a number, this setting will force one of the nouns to be pluralized and prepend a random number in the range of 2-9.")
+parser.add_argument('-s','--start', type=str, help="Specify a letter that the passphrase needs to start with.",metavar='',default='')
+parser.add_argument('-m','--mode', type=int, help="Entropy Wordsmith uses 5 different word combination modes to generate passphrases. They are normally chosen at random, with his option you can specify a single one for the whole batch. Accepts a number in the range 1-5.",metavar='',default=0)
+parser.add_argument('-n','--custom_number',help="Same as the -i/--include-number argument, but directly specifies the number to use.", type=int,metavar='')
+parser.add_argument('-l','--max_length',help="The maximum number of characters the passphrase should contain. Shorter settings give less varied results.", type=int,default=inf,metavar='')
+parser.add_argument('-e','--ending',default='.', help='Select which characters should be appended at the end of the passphrase. Defaults to a period.',metavar='')
+parser.add_argument('-u','--underscore', action="store_true", help="Replace the spaces in the passphrase with underscores.")
+parser.add_argument('-p','--path',type=str,help="A path of an output file. Leave blank to write the results to stdout.",metavar='',default='')
+parser.add_argument('-v','--version',action='version', version='%(prog)s 1.0')
 
-def getMods(path):
-   with open(path,'r') as resRaw:
-     res = [[w.replace('_',' ').strip() for w in reversed(m.split(' '))] for m in resRaw.readlines() if not m.startswith('  ')]
-   modStore = {}
-   def setter(item):
-      if item[0] in modStore:modStore[item[0]].append(item[1])
-      else:modStore[item[0]] = [item[1]]
-   [setter(r) for r in res]
-   return modStore
+args = parser.parse_args()
 
-words={
-   'adj' : getList('./dict/index_adj.txt'),
-   'adv' : getList('./dict/index_adv.txt'),
-   'noun' : getList('./dict/index_noun.txt'),
-   'verb' : getList('./dict/index_verb.txt')
-}
-
-variations={
-   'adj' :  getMods('./dict/exc_adj.txt'),
-   'adv' : getMods('./dict/exc_adv.txt'),
-   'noun' : getMods('./dict/exc_noun.txt'),
-   'verb' : getMods('./dict/exc_verb.txt')
-}
-
-minLength={
-   'noun':3,
-   'adv':3,
-   'adj':len(words['adj'][0]),
-   'verb':len(words['verb'][0]),
-}
-
-listEntry = lambda l: '' if len(l) == 0 else l[randbelow(len(l))]
-firstUp = lambda w: f'{w[0].upper()}{w[1:]}'
-
-def entryForWord(type,limit=inf,starting=''):return listEntry([w for w in words[type]if w.startswith(starting) and len(w)<limit and (type not in ['noun','adv'] or len(w) > 2)]) 
-
-def vary(word,type):
-   if word == '':return ''
-   default={
-      'noun':lambda w: f'{w[:-1]}ies' if w.endswith('y') else  f'{w[-2]}a' if w.endswith('ium') else f'{w[:-1]}ces' if w.endswith('x') else w if w.endswith('s') else  f'{w}s',
-      'verb':lambda w: w 
-   }
-   variation = default[type](word) if word not in variations[type] else listEntry(variations[type][word])
-   return variation
-
-def unvaryVerb(v:str):
-   if v == '':return v
-   splat = v.split(' ')
-   splot = splat[0]
-   changed= f'{splot[:-1]}ies' if splot.endswith('y') else f'{splot}s'
-   return f'{changed} {" ".join(splat[1:])}'
-
-
-def compose(starting='',maxLength=inf,noSpace=False,num=False):
-   p1= randbelow(2) == 1
-   p2= randbelow(2) == 0
-   if num and (not p1) and (not p2):
-      rePlural = randbelow(2)
-      if rePlural == 1: p1 = True
-      else: p2 = True
-   numerized = False
-
-   def numerize(noun,plural):
-      nonlocal numerized
-      if (not num) or (numerized or not plural):return noun
-      numerized= True
-      useNum = num if type(num) is int else max(2,randbelow(10))
-      return f'{useNum} {noun}'
-   
-   limit = maxLength-4-(minLength['noun']*2)-minLength['verb']-minLength['adv']
-   if num: limit = limit-2
-   def var1():
-      nonlocal limit
-      adj = entryForWord('adj',limit,starting)
-      adj = numerize(adj,p1)
-      limit = limit + minLength['adj'] - len(adj) +1
-      noun1 = entryForWord('noun',limit) if not p1 else vary(entryForWord('noun',limit),'noun')
-      limit = limit + minLength['noun'] - len(noun1) +1
-      verb = unvaryVerb(entryForWord('verb',limit)) if not p1 else vary(entryForWord('verb',limit),'verb')
-      limit = limit + minLength['verb'] - len(verb)
-      noun2 = entryForWord('noun',limit) if p2 else vary(entryForWord('noun',limit),'noun')
-      noun2 = numerize(noun2,p2)
-      limit = limit + minLength['noun'] - len(noun2)
-      adv = entryForWord('adv',limit)
-      finito = f"{' '.join([adj,noun1,verb,noun2,adv]).strip().replace('  ',' ')}."
-      return firstUp(finito)
-
-   def var2():
-      nonlocal limit
-      limit=limit-1
-      adv = entryForWord('adv',limit,starting)
-      limit = limit + minLength['adv'] - len(adv) +1
-      adj = entryForWord('adj',limit)
-      adj = numerize(adj,p1)
-      limit = limit + minLength['adj'] - len(adj) +1
-      noun1 = entryForWord('noun',limit) if not p1 else vary(entryForWord('noun',limit),'noun')
-      limit = limit + minLength['noun'] - len(noun1) +1
-      verb = unvaryVerb(entryForWord('verb',limit)) if not p1 else vary(entryForWord('verb',limit),'verb')
-      limit = limit + minLength['verb'] - len(verb)
-      noun2 = entryForWord('noun',limit) if p2 else vary(entryForWord('noun',limit),'noun')
-      noun2 = numerize(noun2,p2)
-      limit = limit + minLength['noun'] - len(noun2)
-      finito = f"{adv}, {' '.join([adj,noun1,verb,noun2]).strip().replace('  ',' ')}."
-      return firstUp(finito)
-
-   def var3():
-      nonlocal limit
-      noun1 = entryForWord('noun',limit,starting) if not p1 else vary(entryForWord('noun',limit,starting),'noun')
-      noun1 = numerize(noun1,p1)
-      limit = limit + minLength['noun'] - len(noun1) +1
-      verb = unvaryVerb(entryForWord('verb',limit)) if not p1 else vary(entryForWord('verb',limit),'verb')
-      limit = limit + minLength['verb'] - len(verb)
-      adj = entryForWord('adj',limit)
-      adj = numerize(adj,p2)
-      limit = limit + minLength['adj'] - len(adj) +1
-      noun2 = entryForWord('noun',limit) if p2 else vary(entryForWord('noun',limit),'noun')
-      limit = limit + minLength['noun'] - len(noun2)
-      adv = entryForWord('adv',limit)
-      finito = f"{' '.join([noun1,verb,adj,noun2,adv]).strip().replace('  ',' ')}."
-      return firstUp(finito)
-
-   def var4():
-      nonlocal limit
-      noun1 = entryForWord('noun',limit,starting) if not p1 else vary(entryForWord('noun',limit,starting),'noun')
-      noun1 = numerize(noun1,p1)
-      limit = limit + minLength['noun'] - len(noun1) +1
-      adv = entryForWord('adv',limit)
-      limit = limit + minLength['adv'] - len(adv) +1
-      verb = unvaryVerb(entryForWord('verb',limit)) if not p1 else vary(entryForWord('verb',limit),'verb')
-      limit = limit + minLength['verb'] - len(verb)
-      adj = entryForWord('adj',limit)
-      adj = numerize(adj,p2)
-      limit = limit + minLength['adj'] - len(adj) +1
-      noun2 = entryForWord('noun',limit) if p2 else vary(entryForWord('noun',limit),'noun')
-      finito = f"{' '.join([noun1,adv,verb,adj,noun2]).strip().replace('  ',' ')}."
-      return firstUp(finito)
-   
-   def var5():
-      nonlocal limit
-      limit = limit-1
-      adj = entryForWord('adj',limit,starting)
-      limit = limit + minLength['adj'] - len(adj) +1
-      noun1 = entryForWord('noun',limit) if not p1 else vary(entryForWord('noun',limit),'noun')
-      noun1 = numerize(noun1,p1)
-      limit = limit + minLength['noun'] - len(noun1) +1
-      adv = entryForWord('adv',limit)
-      limit = limit + minLength['adv'] - len(adv) +1
-      verb = unvaryVerb(entryForWord('verb',limit)) if not p1 else vary(entryForWord('verb',limit),'verb')
-      limit = limit + minLength['verb'] - len(verb)
-      noun2 = entryForWord('noun',limit) if p2 else vary(entryForWord('noun',limit),'noun')
-      noun2 = numerize(noun2,p2)
-      finito = f"{adj}: {' '.join([noun1,adv,verb,noun2]).strip().replace('  ',' ')}."
-      return firstUp(finito)
-
-   variations = [var1,var2,var3,var4,var5]
-   select = listEntry(variations)
-   return '' if select == '' else select().replace(' ','_') if noSpace else select()
-
-def generate(start='',entries=20,limit=inf,noSpace=False,num=False):
-   with open('./passResults.txt','w') as r:
-      r.writelines([f"{compose(start,limit,noSpace,num)}\n" for x in range(entries)])
-
-generate('o')
+if args.start and len(args.start) != 1:
+    raise SystemExit('the s/--start argument only accepts a single letter.')
+if args.mode and args.mode not in (1,2,3,4,5):
+    raise SystemExit('the m/--mode argument has to be between between 1 and 5.')
+    
+mainProcess(args.path,args.start,args.count,args.max_length,args.underscore,args.custom_number or args.include_number,args.ending,args.mode)
