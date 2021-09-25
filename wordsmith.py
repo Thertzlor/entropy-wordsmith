@@ -3,7 +3,7 @@ from math import inf
 
 def getList(path):
    with open(path,'r') as resRaw:
-     res = [m.split(' ')[0].replace('_',' ').strip() for m in resRaw.readlines() if not m.startswith('  ')]
+     res = [m.replace('_',' ').strip() for m in resRaw.readlines() if not m.startswith('  ')]
      res.sort(key=len);
    return res
 
@@ -165,8 +165,8 @@ def compose(starting='',maxLength=inf,noSpace=False,num=False):
    select = listEntry(variations)
    return '' if select == '' else select().replace(' ','_') if noSpace else select()
 
-def generate(start='',amount=20,limit=inf,noSpace=False,num=False):
+def generate(start='',entries=20,limit=inf,noSpace=False,num=False):
    with open('./passResults.txt','w') as r:
-      r.writelines([f"{compose(start,limit,noSpace,num)}\n" for x in range(amount)])
+      r.writelines([f"{compose(start,limit,noSpace,num)}\n" for x in range(entries)])
 
 generate('o')
