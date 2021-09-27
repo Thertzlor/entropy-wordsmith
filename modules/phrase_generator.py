@@ -1,6 +1,7 @@
 from secrets import randbelow
 from math import inf
 from typing import Iterable
+import re
 
 def getList(path):
    with open(path,'r') as resRaw:
@@ -44,20 +45,21 @@ firstUp = lambda w: f'{w[0].upper()}{w[1:]}'
 
 def entryForWord(type,limit=inf,starting=''):return listEntry([w for w in words[type]if w.startswith(starting) and len(w)<limit and (type not in ['noun','adv'] or len(w) > 2)]) 
 
-def vary(word,type):
+def vary(word,wordType):
    if word == '':return ''
    default={
       'noun':lambda w: f'{w[:-1]}ies' if w.endswith('y') else  f'{w[-2]}a' if w.endswith('ium') else f'{w[:-1]}ces' if w.endswith('x') else w if w.endswith('s') else  f'{w}s',
-      'verb':lambda w: w 
+      'verb':lambda w: [re.sub(r"e?d?$","ed",w),re.sub(r"i?e?$","ing",w)] 
    }
-   variation = default[type](word) if word not in variations[type] else listEntry(variations[type][word])
+   defVal = default[wordType](word)
+   variation = (defVal if type(defVal) is str else listEntry(defVal)) if word not in variations[wordType] else listEntry(variations[wordType][word])
    return variation
 
 def unvaryVerb(v:str):
    if v == '':return v
    splat = v.split(' ')
    splot = splat[0]
-   changed= f'{splot[:-1]}ies' if splot.endswith('y') else f'{splot}s'
+   changed= f'{splot[:-1]}ies' if splot.endswith('y') else f'{splot}es' if splot[-1] in ['h'] else re.sub("s?$","s",splot)
    return f'{changed} {" ".join(splat[1:])}'
 
 def compose(starting='',maxLength=inf,noSpace=False,num=False,ending='.',mode=0):
