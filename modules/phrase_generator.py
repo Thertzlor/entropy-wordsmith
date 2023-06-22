@@ -45,22 +45,24 @@ firstUp = lambda w: f'{w[0].upper()}{w[1:]}'
 
 def entryForWord(type,limit=inf,starting=''):return listEntry([w for w in words[type]if w.startswith(starting) and len(w)<limit and (type not in ['noun','adv'] or len(w) > 2)]) 
 
-def vary(word,wordType):
+def vary(word:str,wordType):
    if word == '':return ''
+   wordSplit = word.split(' ')
+   firstWord = wordSplit[0] if (wordType != "noun" or " of " in word) else word
    default={
-      'noun':lambda w: f'{w[:-1]}ies' if w.endswith('y') else  f'{w[-2]}a' if w.endswith('ium') else f'{w[:-1]}ces' if w.endswith('x') else w if w.endswith('s') else  f'{w}s',
+      'noun':lambda w: f'{w[:-1]}ies' if w.endswith('y') else  f'{w[-2]}a' if w.endswith('ium') else f'{w[:-1]}ces' if w.endswith('x') else w if w.endswith('s') else f"{w}es" if (w.endswith('z') or w.endswith('ch')) else  f'{w}s',
       'verb':lambda w: [re.sub(r"e?d?$","ed",w),re.sub(r"i?e?$","ing",w)] 
    }
-   defVal = default[wordType](word)
+   defVal = default[wordType](firstWord)
    variation = (defVal if type(defVal) is str else listEntry(defVal)) if word not in variations[wordType] else listEntry(variations[wordType][word])
    return variation
 
 def unvaryVerb(v:str):
    if v == '':return v
-   splat = v.split(' ')
-   splot = splat[0]
-   changed= f'{splot[:-1]}ies' if splot.endswith('y') else f'{splot}es' if splot[-1] in ['h'] else re.sub("s?$","s",splot)
-   return f'{changed} {" ".join(splat[1:])}'
+   wordSplit = v.split(' ')
+   firstWord = wordSplit[0]
+   changed= f'{firstWord[:-1]}ies' if firstWord.endswith('y') else f'{firstWord}es' if firstWord[-1] in ['h'] else re.sub("s?$","s",firstWord)
+   return f'{changed} {" ".join(wordSplit[1:])}'
 
 def compose(starting='',maxLength=inf,noSpace=False,num=False,ending='.',mode=0):
    p1= randbelow(2) == 1
@@ -79,6 +81,7 @@ def compose(starting='',maxLength=inf,noSpace=False,num=False,ending='.',mode=0)
       return f'{useNum} {noun}'
    limit = (maxLength-4-(minLength['noun']*2)-minLength['verb']-minLength['adv']-len(ending))+1
    if num: limit = limit-(len(str(num))+1)
+
    def var1():
       nonlocal limit
       adj = entryForWord('adj',limit,starting)
