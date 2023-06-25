@@ -10,6 +10,7 @@ parser.add_argument('-m','--mode', type=int, help="Entropy Wordsmith uses 5 diff
 parser.add_argument('-n','--custom_number',help="Same as the -i/--include-number argument, but directly specifies the number to use.", type=int,metavar='')
 parser.add_argument('-l','--max_length',help="The maximum number of characters the passphrase should contain. Shorter settings give less varied results.", type=int,default=inf,metavar='')
 parser.add_argument('-e','--ending',default='.', help='Select which characters should be appended at the end of the passphrase. Defaults to a period.',metavar='')
+parser.add_argument('-a','--no-articles', help='Do not prepend nouns with articles',metavar='')
 parser.add_argument('-u','--underscore', action="store_true", help="Replace the spaces in the passphrase with underscores.")
 parser.add_argument('-p','--path',type=str,help="A path of an output file. Leave blank to write the results to stdout.",metavar='',default='')
 parser.add_argument('-v','--version',action='version', version='%(prog)s 1.0')
