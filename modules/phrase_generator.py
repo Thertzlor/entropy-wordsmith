@@ -14,8 +14,8 @@ def getMods(path):
      res = (tuple([w.replace('_',' ').strip() for w in reversed(m.split(' '))]) for m in resRaw.readlines() if not m.startswith('  '))
    modStore = {}
    def setter(item):
-      if item[0] in modStore:modStore[item[0]].append(item[1])
-      else:modStore[item[0]] = [item[1]]
+      if item[0] in modStore:modStore[item[0]] = modStore[item[0]] + tuple([item[1]])
+      else:modStore[item[0]] = tuple([item[1]])
    [setter(r) for r in res]
    return modStore
 
@@ -49,59 +49,68 @@ def wordAndIndex(l) -> Tuple[str,int]:
    return (l[num],num)
 
 class Word:
-   def __init__(self, type:str,index=None) -> None:
-      self.type = type
-      (raw,index) = wordAndIndex(words[type])
-      self.raw = raw
-      self.index = index
-      self.empty = raw == ''
-      self.variants = self.raw in variations[type] and variations[type][self.raw] or tuple()
-      self.multi = " " in self.raw
-      self.hyphen = "-" in self.raw
-      self.compound = " in " in self.raw or " at " in self.raw or " of " in self.raw or " after " in self.raw or " from " in self.raw or " and " in self.raw
-      self.possessive = "'s" in self.raw
-      self.withArticle = " the " in self.raw or "the " in self.raw
-      self.split = self.raw.split(" ")
+   def __init__(self, kind:str,initiate:str|int|None=None) -> None:
+      self._type = kind
+      raw = ''
+      index = -1
+      if initiate is not None and type(initiate) is str: raw = initiate
+      elif initiate is not None: 
+         index = initiate 
+         raw = words[kind][index]
+      else: (raw,index) = wordAndIndex(words[kind])
+      self._raw = raw
+      self._varied = False
+      self._index = index
+      self._empty = raw == ''
+      self._variants = self._raw in variations[kind] and variations[kind][self._raw] or tuple()
+      self._multi = " " in self._raw
+      self._hyphen = "-" in self._raw
+      self._compound = next((True for x in ("in","at","after","from","of","and","a","it") if (re.match(f'\b{x}\b',self._raw))),None)
+      self._possessive = "'s" in self._raw
+      self._withArticle = " the " in self._raw or "the " in self._raw
+      self._split = tuple(self._raw.split(" "))
 
+   def export(self): return (self._varied and self._variants) and listEntry(self._variants) or self._raw
 
-   def export(self):
-      return self.raw
-   def output(self):
-      return { 
-         "index": self.index, 
-         "raw":self.raw,
-         "variants" : self.variants,
-         "multi": self.multi,
-         "hyphen":self.hyphen,
-         "compound":self.compound,
-         "possessive":self.possessive,
-         }
+   def output(self): return { 
+      "index": self._index, 
+      "raw":self._raw,
+      "variants" : self._variants,
+      "multi": self._multi,
+      "hyphen":self._hyphen,
+      "compound":self._compound,
+      "possessive":self._possessive,
+      "varied":self._varied,
+   }
 
 class Noun(Word):
-   def __init__(self) -> None:
-      super().__init__('noun')
+   def __init__(self,initiate=None) -> None:
+      super().__init__('noun',initiate)
       self.pluralized = False
       self.articled = False
-      self.singular = self.raw
-      singularticles = tuple()
-      pluralticles = tuple()
-      if not self.withArticle:
-         singularticles = (self.raw[0].upper() in ('A','U','O','I') and 'an' or 'a', 'the')
-         pluralticles = tuple(['the'])
-      self.singularticles = singularticles
-      self.pluralticles = pluralticles
-      pluraltarget = len(self.split)-1
-      if self.compound: pluraltarget = 0
-      self.pluralTarget =  pluraltarget
-      plural = len(self.variants)!=0 and self.variants[len(self.variants)-1] or ''
+      self._singular = self._raw
+      pluraltarget = len(self._split)-1
+      if self._compound: pluraltarget = 0
+      self._pluralTarget =  pluraltarget
+      plural = len(self._variants)!=0 and self._variants[len(self._variants)-1] or ''
       if plural == '':
-         target = not self.multi and self.raw or self.split[self.pluralTarget]
+         target = not self._multi and self._raw or self._split[self._pluralTarget]
          target =  (target.endswith('y') and target[-2:] not in ('ay','ey')) and f'{target[:-1]}ies' or target.endswith('us') and f'{target[:-2]}a' or (target.endswith('z') or target[-2:] in ('ss','is','sh','ch')) and f'{target}es' or target.endswith('s') and target or f'{target}s'
-         if not self.multi:
+         if not self._multi:
             plural = target
          else:
-            plural = " ".join(i != self.pluralTarget and x or target for [i,x] in enumerate(self.split))
-      self.plural = plural
+            plural = " ".join(i != self._pluralTarget and x or target for [i,x] in enumerate(self._split))
+      self._plural = plural
+
+   def getArticle(self,before:str=''):
+      if self._withArticle:return ''
+      if self.pluralized: return listEntry(('the','some','many'))
+      else: return listEntry(((before or self._raw[0]).upper() in ('A','U','O','I') and 'an' or 'a', 'the'))
+
+   def export(self,adj:str=''):
+      core = self.pluralized and self._plural or self._singular
+      if (not self.articled) or not self.getArticle(): return adj and f"{adj} {core}" or core
+      return f'{self.getArticle(adj)}{adj and f" {adj} " or " "}{core}'
 
    def output(self):
       oldput = super().output()
@@ -109,45 +118,66 @@ class Noun(Word):
       merged.update(oldput)
       newObj = {
          "pluralized" : self.pluralized,
-         "singular":self.singular,
-         "artSing": self.singularticles,
-         "artPLur":self.pluralticles,
-         "plurtarget":self.split[self.pluralTarget],
-         "plural":self.plural
+         "singular":self._singular,
+         "plurtarget":self._split[self._pluralTarget],
+         "plural":self._plural
       }
       merged.update(newObj)
       return merged
 
 class Adjective(Word):
-   pass
+   def __init__(self, initiate: str | int | None = None) -> None:
+      super().__init__('adj', initiate)
+      self.comparable = bool(self._variants)
+      self._comparative = self.comparable and self._variants[0] or None
+      self._superlative = self.comparable and self._variants[1] or None
+   
+   def output(self):
+      oldput = super().output()
+      merged = dict()
+      merged.update(oldput)
+      newObj = {
+         "comparable" : self.comparable,
+         "comparative": self._comparative,
+         "superlative":self._superlative
+      }
+      merged.update(newObj)
+      return merged
+
 
 class Verb(Word):
-   def __init__(self) -> None:
-      super().__init__('verb')
-      self.varied = False
-      if(not self.variants):
-         tenseTarget = self.multi and self.split[0] or self.raw
-         pastTense =  (tenseTarget.endswith('m') and tenseTarget[-2:-1] in ('a','e','i','o','u'))  and f'{tenseTarget[:-2]}med' or  tenseTarget.endswith('eed') and f'{tenseTarget[:-2]}d' or tenseTarget.endswith('e') and f'{tenseTarget}d' or f'{tenseTarget}ed'
-         tensed = pastTense
-         if self.multi: tensed = " ".join(i != 0 and x or pastTense for [i,x] in enumerate(self.split))
-         partic = tenseTarget.endswith('e') and f'{tenseTarget[:-1]}ing' or f'{tenseTarget}ing'
-         particied = partic
-         if self.multi: particied = " ".join(i != 0 and x or partic for [i,x] in enumerate(self.split))
-         self.variants = [tensed,particied]
+   def __init__(self,init=None) -> None:
+      super().__init__('verb',init)
+      if(not self._variants):
+         if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0])._variants)
+         else:
+            pastTense = self._raw.endswith('e') and f'{self._raw[:-1]}ed' or f'{self._raw}ed'
+            partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
+            self._variants = (pastTense,partic)
+      elif len(self._variants) == 1:
+         partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
+         self._variants = (self._variants[0],partic)
+      self._variants = self._variants + tuple([f'{self._raw}s'])
+      self.pastTense = False
+      self.continuous = False
+      self.present = False
 
 
    def output(self):
       oldput = super().output()
       merged = dict()
       merged.update(oldput)
-      newObj = {
-         "varied":self.varied,
-      }
+      newObj = {"varied":self._varied}
       merged.update(newObj)
       return merged
+   
+   def export(self):
+      return not self._variants and self._raw or self.pastTense and self._variants[0] or self.continuous and self._variants[1] or self.present and self._variants[2] or self._raw
+
 
 class Adverb(Word):
-   pass
+   def __init__(self, initiate: str | int | None = None) -> None:
+      super().__init__('adv', initiate)
 
 
 def entryForWord(type,limit=inf,starting=''):return listEntry([w for w in words[type]if w.startswith(starting) and len(w)<limit and (type not in ['noun','adv'] or len(w) > 2)]) 
@@ -289,11 +319,29 @@ def saveList(wordList:Iterable[str],filePath:str):
 def mainProcess(filePath='', start='',entries=20,limit=inf,noSpace=False,num=False,ending='.',mode=0):
    print("")
    print("")
+   def newVar1():
+      adv=Adverb()
+      adj=Adjective()
+      noun1=Noun()
+      if randbelow(2) ==1:noun1.articled = True
+      if randbelow(2) ==1:noun1.pluralized = True
+      verb=Verb()
+      if not noun1.pluralized: 
+         if randbelow(2) == 1: verb.pastTense = True 
+         else: verb.present =True
+      noun2=Noun()
+      if randbelow(2)==1:noun2.articled = True
+      if randbelow(2)==1:noun2.pluralized = True
+      finito = f"{adv.export()}, {' '.join([noun1.export(adj.export()),verb.export(),noun2.export()]).strip().replace('  ',' ')}{ending}"
+      return firstUp(finito)
    for _ in range(10):
-      dolly = Verb()
-      # while len(dolly.variants) == 0:
-      #    dolly=Noun()
-      print(dolly.output())
+      if False:
+         dolly = Verb()
+         while not dolly._variants: dolly=Verb()
+         dolly.present=True
+         print(dolly.export())
+         print(dolly.output())
+      else: print(newVar1())
       print("")
    pass
    # passList = [compose(start,limit,noSpace,num,ending,mode) for _ in range(entries)]
