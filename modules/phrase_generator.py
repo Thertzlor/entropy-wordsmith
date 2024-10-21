@@ -49,7 +49,7 @@ def wordAndIndex(l) -> Tuple[str,int]:
    return (l[num],num)
 
 class Word:
-   def __init__(self, kind:str,initiate:str|int|None=None) -> None:
+   def __init__(self, kind:str,initiate:str|int|None=None,start:str|None=None) -> None:
       self._type = kind
       raw = ''
       index = -1
@@ -57,7 +57,7 @@ class Word:
       elif initiate is not None: 
          index = initiate 
          raw = words[kind][index]
-      else: (raw,index) = wordAndIndex(words[kind])
+      else: (raw,index) = wordAndIndex(not start and words[kind] or (w for w in words[kind] if w.startswith(start.lower())))
       self._raw = raw
       self._varied = False
       self._index = index
@@ -84,8 +84,8 @@ class Word:
    }
 
 class Noun(Word):
-   def __init__(self,initiate=None) -> None:
-      super().__init__('noun',initiate)
+   def __init__(self,initiate=None,start=None) -> None:
+      super().__init__('noun',initiate,start)
       self.pluralized = False
       self.articled = False
       self._singular = self._raw
@@ -126,8 +126,8 @@ class Noun(Word):
       return merged
 
 class Adjective(Word):
-   def __init__(self, initiate: str | int | None = None) -> None:
-      super().__init__('adj', initiate)
+   def __init__(self, initiate: str | int | None = None,start=None) -> None:
+      super().__init__('adj', initiate,start)
       self.comparable = bool(self._variants)
       self._comparative = self.comparable and self._variants[0] or None
       self._superlative = self.comparable and self._variants[1] or None
@@ -144,10 +144,9 @@ class Adjective(Word):
       merged.update(newObj)
       return merged
 
-
 class Verb(Word):
-   def __init__(self,init=None) -> None:
-      super().__init__('verb',init)
+   def __init__(self,init=None,start=None) -> None:
+      super().__init__('verb',init,start)
       if(not self._variants):
          if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0])._variants)
          else:
@@ -174,10 +173,9 @@ class Verb(Word):
    def export(self):
       return not self._variants and self._raw or self.pastTense and self._variants[0] or self.continuous and self._variants[1] or self.present and self._variants[2] or self._raw
 
-
 class Adverb(Word):
-   def __init__(self, initiate: str | int | None = None) -> None:
-      super().__init__('adv', initiate)
+   def __init__(self, initiate: str | int | None = None,start=None) -> None:
+      super().__init__('adv', initiate,start)
 
 
 def entryForWord(type,limit=inf,starting=''):return listEntry([w for w in words[type]if w.startswith(starting) and len(w)<limit and (type not in ['noun','adv'] or len(w) > 2)]) 
