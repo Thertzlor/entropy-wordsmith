@@ -41,61 +41,61 @@ minLength={
    'adj':len(words['adj'][0]),
    'verb':len(words['verb'][0]),
 }
+def prepareWords():
+  characters_used = 0
+  words_generated = 0
+  char_limit = 0
 
-def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None):
-   characters_used = 0
-   words_generated = 0
-
-   class Word:
+  class Word:
       def __init__(self, kind:str,initiate:str|int|None=None,start:str|None=None,add_chars=1, max_expand=0) -> None:
-         nonlocal char_limit,characters_used,words_generated
-         maxLength = char_limit - characters_used - max_expand
-         self._type = kind
-         raw = ''
-         index = -1
-         self._space = add_chars
-         if initiate is not None and type(initiate) is str: raw = initiate
-         elif initiate is not None: 
+        nonlocal char_limit,characters_used,words_generated
+        maxLength = char_limit - characters_used - max_expand
+        self._type = kind
+        raw = ''
+        index = -1
+        self._space = add_chars
+        if initiate is not None and type(initiate) is str: raw = initiate
+        elif initiate is not None: 
             index = initiate 
             raw = words[kind][index]
-         else:
+        else:
             wuple = tuple(x for x in not start and words[kind] or tuple(w for w in words[kind] if w.startswith(start.lower())) if len(x) < maxLength and len(x) > minLength[kind])
             if(len(wuple)) == 0: raise Exception("Not enough fucking words.")
             (raw,index) = wordAndIndex(wuple)
-         self._raw = raw
-         self._index = index
-         self._empty = raw == ''
-         self._variants = self._raw in variations[kind] and variations[kind][self._raw] or tuple()
-         self._fixed_variant = None
-         self._multi = " " in self._raw
-         self._hyphen = "-" in self._raw
-         self._compound = next((True for x in ("in","at","after","from","of","and","a","it") if (re.match(f'\b{x}\b',self._raw))),None)
-         self._possessive = "'s" in self._raw
-         self._withArticle = " the " in self._raw or "the " in self._raw
-         self._split = tuple(self._raw.split(" "))
+        self._raw = raw
+        self._index = index
+        self._empty = raw == ''
+        self._variants = self._raw in variations[kind] and variations[kind][self._raw] or tuple()
+        self._fixed_variant = None
+        self._multi = " " in self._raw
+        self._hyphen = "-" in self._raw
+        self._compound = next((True for x in ("in","at","after","from","of","and","a","it") if (re.match(f'\b{x}\b',self._raw))),None)
+        self._possessive = "'s" in self._raw
+        self._withArticle = " the " in self._raw or "the " in self._raw
+        self._split = tuple(self._raw.split(" "))
 
       def export(self): 
-         if not self._fixed_variant and self._variants:
+        if not self._fixed_variant and self._variants:
             self._fixed_variant = randbelow(len(self._variants))      
-         return self._raw if self._fixed_variant is None else self._variants[self._fixed_variant]
+        return self._raw if self._fixed_variant is None else self._variants[self._fixed_variant]
       
       def add(self): 
-         nonlocal characters_used,words_generated
-         words_generated +=1
-         characters_used += (len(self.export()) + self._space)
+        nonlocal characters_used,words_generated
+        words_generated +=1
+        characters_used += (len(self.export()) + self._space)
 
       def output(self): return { 
-         "index": self._index, 
-         "raw":self._raw,
-         "variants" : self._variants,
-         "multi": self._multi,
-         "hyphen":self._hyphen,
-         "compound":self._compound,
-         "possessive":self._possessive
+        "index": self._index, 
+        "raw":self._raw,
+        "variants" : self._variants,
+        "multi": self._multi,
+        "hyphen":self._hyphen,
+        "compound":self._compound,
+        "possessive":self._possessive
       }
 
 
-   class Noun(Word):
+  class Noun(Word):
       def __init__(self,initiate=None,start=None,articled=False,pluralized=False,add_chars=1,prepend_number:int|None=None) -> None:
           super().__init__('noun',initiate,start,add_chars,max_expand=2)
           self._pluralized = pluralized
@@ -115,75 +115,75 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
           self._plural = plural
           self._num_string = "" if prepend_number is None else f"{prepend_number} "
           self.add()
-         
+        
       @property
       def pluralized(self):return self._pluralized
       @property
       def articled(self):return self._articled
 
       def _getArticle(self,before:str=''):
-         if self._withArticle:return ''
-         if self._pluralized: return listEntry(('the','some'))
-         else: return listEntry(((before or self._raw[0]).upper() in ('A','U','O','I') and 'an' or 'a', 'the'))
+        if self._withArticle:return ''
+        if self._pluralized: return listEntry(('the','some'))
+        else: return listEntry(((before or self._raw[0]).upper() in ('A','U','O','I') and 'an' or 'a', 'the'))
 
       def export(self,adj:str=''):
-         core = self._pluralized and self._plural or self._singular
-         if (not self._articled) or not self._getArticle(): return adj and f"{self._num_string}{adj} {core}" or f"{self._num_string}{core}"
-         return f'{self._getArticle(adj)} {self._num_string}{adj and f" {adj} " or " "}{core}'
+        core = self._pluralized and self._plural or self._singular
+        if (not self._articled) or not self._getArticle(): return adj and f"{self._num_string}{adj} {core}" or f"{self._num_string}{core}"
+        return f'{self._getArticle(adj)} {self._num_string}{adj and f" {adj} " or " "}{core}'
 
       def output(self):
-         oldput = super().output()
-         merged = dict()
-         merged.update(oldput)
-         newObj = {
+        oldput = super().output()
+        merged = dict()
+        merged.update(oldput)
+        newObj = {
             "pluralized" : self._pluralized,
             "singular":self._singular,
             "plurtarget":self._split[self._pluralTarget],
             "plural":self._plural
-         }
-         merged.update(newObj)
-         return merged
+        }
+        merged.update(newObj)
+        return merged
 
 
-   class Adjective(Word):
+  class Adjective(Word):
       def __init__(self, initiate: str | int | None = None, start=None,mode:None|Literal["comparative","superlative"]=None,add_chars=1) -> None:
-         super().__init__("adj", initiate, start,add_chars)
-         self.comparable = bool(self._variants)
-         self._comparative = self.comparable and self._variants[0] or None
-         self._superlative = self.comparable and self._variants[1] or None
-         self.add()
+        super().__init__("adj", initiate, start,add_chars)
+        self.comparable = bool(self._variants)
+        self._comparative = self.comparable and self._variants[0] or None
+        self._superlative = self.comparable and self._variants[1] or None
+        self.add()
 
       def output(self):
-         oldput = super().output()
-         merged = dict()
-         merged.update(oldput)
-         newObj = {
+        oldput = super().output()
+        merged = dict()
+        merged.update(oldput)
+        newObj = {
             "comparable": self.comparable,
             "comparative": self._comparative,
             "superlative": self._superlative,
-         }
-         merged.update(newObj)
-         return merged
+        }
+        merged.update(newObj)
+        return merged
 
 
-   class Verb(Word):
+  class Verb(Word):
       def __init__(self,init=None,start=None, tense:Literal["present","past"]|None=None,continuous = False,add_chars=1,) -> None:
-         super().__init__('verb',init,start,add_chars,max_expand=3)
-         if(not self._variants):
+        super().__init__('verb',init,start,add_chars,max_expand=3)
+        if(not self._variants):
             if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0])._variants)
             else:
-               pastTense = self._raw.endswith('e') and f'{self._raw[:-1]}ed' or f'{self._raw}ed'
-               partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
-               self._variants = (pastTense,partic)
-         elif len(self._variants) == 1:
+              pastTense = self._raw.endswith('e') and f'{self._raw[:-1]}ed' or f'{self._raw}ed'
+              partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
+              self._variants = (pastTense,partic)
+        elif len(self._variants) == 1:
             partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
             self._variants = (self._variants[0],partic)
-         self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw}s'])
-         self._pastTense = tense == "past"
-         self._continuous = continuous
-         self._present = tense == "present"
-         self.add()
-         
+        self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw}s'])
+        self._pastTense = tense == "past"
+        self._continuous = continuous
+        self._present = tense == "present"
+        self.add()
+        
       @property
       def pastTense(self):return self._pastTense
       @property
@@ -192,42 +192,49 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
       def continuous(self):return self._continuous
 
       def output(self):
-         oldput = super().output()
-         merged = dict()
-         merged.update(oldput)
-         newObj = {"varied":self._varied}
-         merged.update(newObj)
-         return merged
+        oldput = super().output()
+        merged = dict()
+        merged.update(oldput)
+        newObj = {"varied":self._varied}
+        merged.update(newObj)
+        return merged
       
       def export(self):
-         return not self._variants and self._raw or self._pastTense and self._variants[0] or self._continuous and self._variants[1] or self._present and self._variants[2] or self._raw
+        return not self._variants and self._raw or self._pastTense and self._variants[0] or self._continuous and self._variants[1] or self._present and self._variants[2] or self._raw
 
 
-   class Adverb(Word):
+  class Adverb(Word):
       def __init__(self, initiate: str | int | None = None,start=None,add_chars=1,) -> None:
-         super().__init__('adv', initiate,start,add_chars)
-         self.add()
-   
-   
-   WordTuple = NamedTuple('WordTuple', [('noun1', Noun), ('noun2', Noun),('adverb',Adverb),('adjective',Adjective),('verb',Verb)])
-   
-   hasNum = num is not None
-   
-   plural1 = maybe()
-   plural2 = maybe()
-   
-   numTarget = 0
+        super().__init__('adv', initiate,start,add_chars)
+        self.add()
   
-   if hasNum:
-     if plural1: 
-       numTarget = 1
-     else:
-       plural2 = True
-       numTarget = 2
+  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None):
+    nonlocal char_limit,characters_used,words_generated
+    char_limit = c_limit
+    characters_used = 0
+    words_generated = 0
+  
+    WordTuple = NamedTuple('WordTuple', [('noun1', Noun), ('noun2', Noun),('adverb',Adverb),('adjective',Adjective),('verb',Verb)])      
+  
+    plural1 = maybe()
+    plural2 = maybe()
+    
+    numTarget = 0
+    
+    if num:
+      if type(num) is bool:
+        num = randbelow(8)+1
+      if plural1: 
+        numTarget = 1
+      else:
+        plural2 = True
+        numTarget = 2
 
-   noun1 = Noun(articled=maybe(), pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
-   noun2 = Noun(articled=maybe(), pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
-   verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
-   adv = Adverb(start=start if first_word == "adverb" else None)
-   adj = Adjective(start=start if first_word == "adjective" else None)
-   return WordTuple(noun1,noun2,adv,adj,verb)
+    noun1 = Noun(articled=maybe(), pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
+    noun2 = Noun(articled=maybe(), pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
+    verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
+    adv = Adverb(start=start if first_word == "adverb" else None)
+    adj = Adjective(start=start if first_word == "adjective" else None)
+    return WordTuple(noun1,noun2,adv,adj,verb)
+  
+  return getWords

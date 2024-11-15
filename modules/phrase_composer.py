@@ -1,6 +1,6 @@
 from math import inf
 from typing import Iterable
-from modules.word_parser import getWords
+from modules.word_parser import prepareWords
 from modules.utilities import listEntry
 
 def saveList(wordList:Iterable[str],filePath:str):
@@ -11,7 +11,7 @@ def saveList(wordList:Iterable[str],filePath:str):
 def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,ending='.',mode=0):
    firstUp = lambda w: f'{w[0].upper()}{w[1:]}'
    variations:list[function] = []
-   
+   getWords = prepareWords()
    def var1():
       w=getWords(limit,'adverb',start,num)
       finito = f"{w.adverb.export()}, {' '.join([w.noun1.export(w.adjective.export()),w.verb.export(),w.noun2.export()]).strip().replace('  ',' ')}{ending}"
