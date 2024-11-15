@@ -21504,5 +21504,5 @@ zygomorphic
 zygomorphous
 zygotic
 zymoid
-zymolytic a 1 2 \ + 1 0 03000447          
+zymolytic
 zymotic
