@@ -178,7 +178,7 @@ def prepareWords():
         elif len(self._variants) == 1:
             partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
             self._variants = (self._variants[0],partic)
-        self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw}s'])
+        self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw[-1]}ies' if self._raw.endswith('y') else  f'{self._raw}s'])
         self._pastTense = tense == "past"
         self._continuous = continuous
         self._present = tense == "present"
@@ -208,7 +208,7 @@ def prepareWords():
         super().__init__('adv', initiate,start,add_chars)
         self.add()
   
-  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None):
+  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None,no_articles=False):
     nonlocal char_limit,characters_used,words_generated
     char_limit = c_limit
     characters_used = 0
@@ -218,6 +218,8 @@ def prepareWords():
   
     plural1 = maybe()
     plural2 = maybe()
+    article1 = maybe() if not no_articles else False
+    article2 = maybe() if not no_articles else False
     
     numTarget = 0
     
@@ -229,9 +231,10 @@ def prepareWords():
       else:
         plural2 = True
         numTarget = 2
+    
 
-    noun1 = Noun(articled=maybe(), pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
-    noun2 = Noun(articled=maybe(), pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
+    noun1 = Noun(articled=article1, pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
+    noun2 = Noun(articled=article2, pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
     verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
     adv = Adverb(start=start if first_word == "adverb" else None)
     adj = Adjective(start=start if first_word == "adjective" else None)
