@@ -42,7 +42,7 @@ minLength={
    'verb':len(words['verb'][0]),
 }
 
-def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None):
+def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None):
    characters_used = 0
    words_generated = 0
 
@@ -94,40 +94,42 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
          "possessive":self._possessive
       }
 
+
    class Noun(Word):
-      def __init__(self,initiate=None,start=None,articled=False,pluralized=False,add_chars=1,) -> None:
-         super().__init__('noun',initiate,start,add_chars,max_expand=2)
-         self._pluralized = pluralized
-         self._articled = articled
-         self._singular = self._raw
-         pluraltarget = len(self._split)-1
-         if self._compound: pluraltarget = 0
-         self._pluralTarget =  pluraltarget
-         plural = len(self._variants)!=0 and self._variants[len(self._variants)-1] or ''
-         if plural == '':
+      def __init__(self,initiate=None,start=None,articled=False,pluralized=False,add_chars=1,prepend_number:int|None=None) -> None:
+          super().__init__('noun',initiate,start,add_chars,max_expand=2)
+          self._pluralized = pluralized
+          self._articled = articled
+          self._singular = self._raw
+          pluraltarget = len(self._split)-1
+          if self._compound: pluraltarget = 0
+          self._pluralTarget =  pluraltarget
+          plural = len(self._variants)!=0 and self._variants[len(self._variants)-1] or ''
+          if plural == '':
             target = not self._multi and self._raw or self._split[self._pluralTarget]
             target =  (target.endswith('y') and target[-2:] not in ('ay','ey')) and f'{target[:-1]}ies' or target.endswith('us') and f'{target[:-2]}a' or (target.endswith('z') or target[-2:] in ('ss','is','sh','ch')) and f'{target}es' or target.endswith('s') and target or f'{target}s'
             if not self._multi:
-               plural = target
+                plural = target
             else:
-               plural = " ".join(i != self._pluralTarget and x or target for [i,x] in enumerate(self._split))
-         self._plural = plural
-         self.add()
+                plural = " ".join(i != self._pluralTarget and x or target for [i,x] in enumerate(self._split))
+          self._plural = plural
+          self._num_string = "" if prepend_number is None else f"{prepend_number} "
+          self.add()
          
       @property
       def pluralized(self):return self._pluralized
       @property
       def articled(self):return self._articled
 
-      def getArticle(self,before:str=''):
+      def _getArticle(self,before:str=''):
          if self._withArticle:return ''
-         if self._pluralized: return listEntry(('the','some','many'))
+         if self._pluralized: return listEntry(('the','some'))
          else: return listEntry(((before or self._raw[0]).upper() in ('A','U','O','I') and 'an' or 'a', 'the'))
 
       def export(self,adj:str=''):
          core = self._pluralized and self._plural or self._singular
-         if (not self._articled) or not self.getArticle(): return adj and f"{adj} {core}" or core
-         return f'{self.getArticle(adj)}{adj and f" {adj} " or " "}{core}'
+         if (not self._articled) or not self._getArticle(): return adj and f"{self._num_string}{adj} {core}" or f"{self._num_string}{core}"
+         return f'{self._getArticle(adj)} {self._num_string}{adj and f" {adj} " or " "}{core}'
 
       def output(self):
          oldput = super().output()
@@ -141,6 +143,7 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
          }
          merged.update(newObj)
          return merged
+
 
    class Adjective(Word):
       def __init__(self, initiate: str | int | None = None, start=None,mode:None|Literal["comparative","superlative"]=None,add_chars=1) -> None:
@@ -162,6 +165,7 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
          merged.update(newObj)
          return merged
 
+
    class Verb(Word):
       def __init__(self,init=None,start=None, tense:Literal["present","past"]|None=None,continuous = False,add_chars=1,) -> None:
          super().__init__('verb',init,start,add_chars,max_expand=3)
@@ -174,7 +178,7 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
          elif len(self._variants) == 1:
             partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
             self._variants = (self._variants[0],partic)
-         self._variants = self._variants + tuple([f'{self._raw}s'])
+         self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw}s'])
          self._pastTense = tense == "past"
          self._continuous = continuous
          self._present = tense == "present"
@@ -195,17 +199,34 @@ def getWords(char_limit = inf,first_word:None|Literal['noun1','noun2','verb','ad
          merged.update(newObj)
          return merged
       
-      def export(self,noun=''):
+      def export(self):
          return not self._variants and self._raw or self._pastTense and self._variants[0] or self._continuous and self._variants[1] or self._present and self._variants[2] or self._raw
+
 
    class Adverb(Word):
       def __init__(self, initiate: str | int | None = None,start=None,add_chars=1,) -> None:
          super().__init__('adv', initiate,start,add_chars)
          self.add()
    
+   
    WordTuple = NamedTuple('WordTuple', [('noun1', Noun), ('noun2', Noun),('adverb',Adverb),('adjective',Adjective),('verb',Verb)])
-   noun1 = Noun(articled=maybe(), pluralized=maybe(),start=start if first_word == "noun1" else None)
-   noun2 = Noun(articled=maybe(), pluralized=maybe(), start=start if first_word == "noun2" else None)
+   
+   hasNum = num is not None
+   
+   plural1 = maybe()
+   plural2 = maybe()
+   
+   numTarget = 0
+  
+   if hasNum:
+     if plural1: 
+       numTarget = 1
+     else:
+       plural2 = True
+       numTarget = 2
+
+   noun1 = Noun(articled=maybe(), pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
+   noun2 = Noun(articled=maybe(), pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
    verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
    adv = Adverb(start=start if first_word == "adverb" else None)
    adj = Adjective(start=start if first_word == "adjective" else None)
