@@ -25,7 +25,7 @@ def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,e
    
    def var3():
       w=getWords(limit,'noun1',start,num,no_articles)
-      finito = f"{' '.join([w.noun1.export(),w.verb.export(),w.adjective.export(),w.noun2.export(),w.adverb.export()]).strip().replace('  ',' ')}{ending}"
+      finito = f"{' '.join([w.noun1.export(),w.verb.export(),w.noun2.export(w.adjective.export()),w.adverb.export()]).strip().replace('  ',' ')}{ending}"
       return firstUp(finito)
 
    def var4():
