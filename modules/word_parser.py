@@ -5,10 +5,11 @@ import re
 
 from modules.utilities import wordAndIndex, listEntry,maybe
 
+min_length=2
+
 def getList(path):
    with open(path,'r') as resRaw:
-     res = [m.replace('_',' ').strip() for m in resRaw.readlines() if not m.startswith('  ')]
-     res.sort(key=len);
+     res = [m.replace('_',' ').strip() for m in resRaw.readlines() if not (len(m) <= min_length or m.startswith('  '))]
    return tuple(res)
 
 def getMods(path):
@@ -35,12 +36,6 @@ variations={
    'verb' : getMods('./dict/exc_verb.txt')
 }
 
-minLength={
-   'noun':3,
-   'adv':3,
-   'adj':len(words['adj'][0]),
-   'verb':len(words['verb'][0]),
-}
 def prepareWords():
   characters_used = 0
   words_generated = 0
@@ -59,9 +54,9 @@ def prepareWords():
             index = initiate 
             raw = words[kind][index]
         else:
-            wuple = tuple(x for x in not start and words[kind] or tuple(w for w in words[kind] if w.startswith(start.lower())) if len(x) < maxLength and len(x) > minLength[kind])
-            if(len(wuple)) == 0: raise Exception("Not enough fucking words.")
-            (raw,index) = wordAndIndex(wuple)
+            word_list = tuple(x for x in not start and words[kind] or tuple(w for w in words[kind] if w.startswith(start.lower())) if len(x) < maxLength)
+            if(len(word_list)) == 0: raise Exception("Could not find enough words.")
+            (raw,index) = wordAndIndex(word_list)
         self._raw = raw
         self._index = index
         self._empty = raw == ''
@@ -105,13 +100,13 @@ def prepareWords():
           if self._compound: pluraltarget = 0
           self._pluralTarget =  pluraltarget
           plural = len(self._variants)!=0 and self._variants[len(self._variants)-1] or ''
+          
           if plural == '':
             target = not self._multi and self._raw or self._split[self._pluralTarget]
             target =  (target.endswith('y') and target[-2:] not in ('ay','ey')) and f'{target[:-1]}ies' or target.endswith('us') and f'{target[:-2]}a' or (target.endswith('z') or target[-2:] in ('ss','is','sh','ch')) and f'{target}es' or target.endswith('s') and target or f'{target}s'
-            if not self._multi:
-                plural = target
-            else:
-                plural = " ".join(i != self._pluralTarget and x or target for [i,x] in enumerate(self._split))
+            if not self._multi: plural = target
+            else: plural = " ".join(i != self._pluralTarget and x or target for [i,x] in enumerate(self._split))
+            
           self._plural = plural
           self._num_string = "" if prepend_number is None else f"{prepend_number} "
           self.add()
@@ -169,12 +164,15 @@ def prepareWords():
       
       def export(self):
          return self._raw if self._mode is None else self._comparative if self._mode == "comparative" else self._superlative
-      
 
 
   class Verb(Word):
       def __init__(self,init=None,start=None, tense:Literal["present","past"]|None=None,continuous = False,add_chars=1,) -> None:
         super().__init__('verb',init,start,add_chars,max_expand=3)
+        self._pastTense = tense == "past"
+        self._continuous = continuous
+        self._present = tense == "present"
+        
         if(not self._variants):
             if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0])._variants)
             else:
@@ -184,10 +182,8 @@ def prepareWords():
         elif len(self._variants) == 1:
             partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
             self._variants = (self._variants[0],partic)
+
         self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw[-1]}ies' if self._raw.endswith('y') else  f'{self._raw}s'])
-        self._pastTense = tense == "past"
-        self._continuous = continuous
-        self._present = tense == "present"
         self.add()
         
       @property
@@ -230,19 +226,19 @@ def prepareWords():
     if compare != "never":adjMode = None if  maybe(3) else "comparative" if maybe() else "superlative"
     if compare == "always" and adjMode != None:adjMode = "comparative" if maybe() else "superlative"
     
-    numTarget = 0
+    num_target = 0
     
     if num:
       if type(num) is bool:
         num = randbelow(8)+1
       if plural1: 
-        numTarget = 1
+        num_target = 1
       else:
         plural2 = True
-        numTarget = 2
+        num_target = 2
     
-    noun1 = Noun(articled=article1, pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
-    noun2 = Noun(articled=article2, pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
+    noun1 = Noun(articled=article1, pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if num_target == 1 else None)
+    noun2 = Noun(articled=article2, pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if num_target == 2 else None)
     verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
     adv = Adverb(start=start if first_word == "adverb" else None)
     adj = Adjective(start=start if first_word == "adjective" else None,mode=adjMode,force_mode=compare)
