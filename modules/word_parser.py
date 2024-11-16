@@ -167,37 +167,67 @@ def prepareWords():
 
 
   class Verb(Word):
-      def __init__(self,init=None,start=None, tense:Literal["present","past"]|None=None,continuous = False,add_chars=1,) -> None:
+      def __init__(self,init=None,start=None, tense:Literal["present","past"]|None=None,continuous = False,add_chars=1,dummy=False) -> None:
         super().__init__('verb',init,start,add_chars,max_expand=3)
         self._pastTense = tense == "past"
         self._continuous = continuous
         self._present = tense == "present"
+        self._stem_past()
         
         if(not self._variants):
-            if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0])._variants)
-            else:
-              pastTense = self._raw.endswith('e') and f'{self._raw[:-1]}ed' or f'{self._raw}ed'
-              partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
-              self._variants = (pastTense,partic)
+          if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0],dummy=True)._variants)
+          else:
+            [suffix,cut] = self._stem_past()
+            pastTense = f'{self._raw[:cut]}{suffix}'
+            [suffix_p,cut_p] = self._stem_ing()
+            partic = f'{self._raw[:cut_p]}{suffix_p}'
+            self._variants = (pastTense,partic)
         elif len(self._variants) == 1:
-            partic = self._raw.endswith('e') and f'{self._raw[:-1]}ing' or f'{self._raw}ing'
-            self._variants = (self._variants[0],partic)
-
-        self._variants = self._variants + tuple([f'{self._raw}es' if (self._raw.endswith('o') and not self._raw.endswith('oo')) else f'{self._raw[-1]}ies' if self._raw.endswith('y') else  f'{self._raw}s'])
-        self.add()
+          [suffix,cut] = self._stem_ing()
+          partic = f'{self._raw[:cut]}{suffix}'
+          self._variants = (self._variants[0],partic)
+        if not self._multi:self._variants = self._variants + tuple([f'{self._raw}es' if ((self._raw.endswith('o') or self._raw.endswith('z')) and not self._raw.endswith('oo')) else f'{self._raw}es' if self._raw.endswith('h') else f'{self._raw[:-1]}ies' if self._raw.endswith('y') else f'{self._raw}es' if self._raw.endswith('s') else  f'{self._raw}s'])
+        if not dummy:self.add()
         
+      def _stem_past(self):
+        last_letter = self._raw[-1:]
+        second_to_last = self._raw[-2:-1]
+        l = len(self._raw)
+        match last_letter:
+          case "l": return ("led",l if second_to_last in ('a','e','i','o','u') else -1)
+          case "e": return ("d",l)
+          case _: return ("ed",l)
+
+      def _stem_present(self):
+        last_letter = self._raw[-1:]
+        second_to_last = self._raw[-2:-1]
+        l = len(self._raw)
+        match last_letter:
+          case "l": return ("led",l if second_to_last in ('a','e','i','o','u') else -1)
+          case "e": return ("d",l)
+          case _: return ("ed",l)
+
+      def _stem_ing(self):
+        last_letter = self._raw[-1:]
+        second_to_last = self._raw[-2:-1]
+        l = len(self._raw)
+        match last_letter:
+          case "e": return ("ing",-1)
+          case "l": return ("ing",l)
+          case _: return ("ing",l)
+    
       @property
       def pastTense(self):return self._pastTense
       @property
       def presentTense(self):return self._present
       @property
       def continuous(self):return self._continuous
-
+      
       def output(self):
         oldput = super().output()
         merged = dict()
         merged.update(oldput)
-        newObj = {"varied":self._varied}
+        newObj = {}
         merged.update(newObj)
         return merged
       
@@ -206,15 +236,26 @@ def prepareWords():
 
 
   class Adverb(Word):
-      def __init__(self, initiate: str | int | None = None,start=None,add_chars=1,) -> None:
+      def __init__(self, initiate: str | int | None = None,start=None,add_chars=1,middle=False) -> None:
         super().__init__('adv', initiate,start,add_chars)
+        self._middle = middle
         self.add()
-  
-  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None,articles:Literal["random","always","never"]="random", compare:Literal["random","always","never"]="random"):
+      
+      def export(self):
+        return f', {self._raw},' if self._multi and self._middle else self._raw 
+        
+  def single_word_debug_info(debug_object:list[str]):
+    w_type = debug_object.pop(0)
+    my_word = (Noun if w_type == "noun" else Verb if w_type == "verb" else Adjective if w_type == "adj" else Adverb)(*debug_object)
+    
+    print(my_word.export(),my_word.output(),sep='\n')
+
+  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None,articles:Literal["random","always","never"]="random", compare:Literal["random","always","never"]="random",enclosed_adverb=False,debug_object:list[str]|None = None):
     nonlocal char_limit,characters_used,words_generated
     char_limit = c_limit
     characters_used = 0
     words_generated = 0
+    if debug_object: return single_word_debug_info(debug_object) 
   
     WordTuple = NamedTuple('WordTuple', [('noun1', Noun), ('noun2', Noun),('adverb',Adverb),('adjective',Adjective),('verb',Verb)])      
   
@@ -240,7 +281,7 @@ def prepareWords():
     noun1 = Noun(articled=article1, pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if num_target == 1 else None)
     noun2 = Noun(articled=article2, pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if num_target == 2 else None)
     verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
-    adv = Adverb(start=start if first_word == "adverb" else None)
+    adv = Adverb(start=start if first_word == "adverb" else None,middle=enclosed_adverb)
     adj = Adjective(start=start if first_word == "adjective" else None,mode=adjMode,force_mode=compare)
     return WordTuple(noun1,noun2,adv,adj,verb)
   
