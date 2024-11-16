@@ -1,5 +1,5 @@
 from math import inf
-from typing import Iterable, Callable
+from typing import Iterable, Callable, Literal
 from modules.word_parser import prepareWords
 from modules.utilities import listEntry
 
@@ -8,32 +8,32 @@ def saveList(wordList:Iterable[str],filePath:str):
       r.write('\n'.join(wordList))
    return True
 
-def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,ending='.',mode=0,no_articles=False):
+def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,ending='.',mode=0,articles:Literal["random","always","never"]="random",compare:Literal["random","always","never"]="random"):
    toFile = filePath != ''
    firstUp = lambda w: f'{w[0].upper()}{w[1:]}'
    variations:list[Callable[[],str]] = []
    getWords = prepareWords()
    def var1():
-      w=getWords(limit,'adverb',start,num,no_articles)
+      w=getWords(limit,'adverb',start,num,articles,compare)
       finito = f"{w.adverb.export()}, {' '.join([w.noun1.export(w.adjective.export()),w.verb.export(),w.noun2.export()]).strip().replace('  ',' ')}{ending}"
       return firstUp(finito)
 
    def var2():
-      w=getWords(limit,'adjective',start,num,no_articles)
+      w=getWords(limit,'adjective',start,num,articles,compare)
       finito = f"{' '.join([w.noun1.export(w.adjective.export()),w.verb.export(),w.noun2.export(),w.adverb.export()]).strip().replace('  ',' ')}{ending}"
       return firstUp(finito)
    
    def var3():
-      w=getWords(limit,'noun1',start,num,no_articles)
+      w=getWords(limit,'noun1',start,num,articles,compare)
       finito = f"{' '.join([w.noun1.export(),w.verb.export(),w.noun2.export(w.adjective.export()),w.adverb.export()]).strip().replace('  ',' ')}{ending}"
       return firstUp(finito)
 
    def var4():
-      w=getWords(limit,'noun1',start,num,no_articles)
+      w=getWords(limit,'noun1',start,num,articles,compare)
       finito = f"{' '.join([w.noun1.export(),w.adverb.export(),w.verb.export(),w.noun2.export(w.adjective.export())]).strip().replace('  ',' ')}{ending}"
       return firstUp(finito)
    def var5():
-      w=getWords(limit,'adjective',start,num,no_articles)
+      w=getWords(limit,'adjective',start,num,articles,compare)
       finito = f"{w.adjective.export()}: {' '.join([w.noun1.export(),w.adverb.export(),w.verb.export(),w.noun2.export()]).strip().replace('  ',' ')}{ending}"
       return firstUp(finito)
 
@@ -57,8 +57,7 @@ def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,e
       except:
          failures += 1
          if(failures > max_failures):
-            print("Error")
+            print("ERROR")
             break
 
-    # passList = [compose(start,limit,noSpace,num,ending,mode) for _ in range(entries)]
    if toFile: saveList(passes)

@@ -146,11 +146,13 @@ def prepareWords():
 
 
   class Adjective(Word):
-      def __init__(self, initiate: str | int | None = None, start=None,mode:None|Literal["comparative","superlative"]=None,add_chars=1) -> None:
+      def __init__(self, initiate: str | int | None = None, start=None,mode:None|Literal["comparative","superlative"]=None,add_chars=1,force_mode:Literal["random","always","never"]="random") -> None:
         super().__init__("adj", initiate, start,add_chars)
         self.comparable = bool(self._variants)
-        self._comparative = self.comparable and self._variants[0] or None
-        self._superlative = self.comparable and self._variants[1] or None
+        treat_comparable = force_mode == "always" or maybe(3)
+        self._comparative = self.comparable and self._variants[0] or (f"more {self._raw}" if treat_comparable else None)
+        self._superlative = self.comparable and self._variants[1] or (f"most {self._raw}" if treat_comparable else None)
+        self._mode = mode
         self.add()
 
       def output(self):
@@ -164,6 +166,10 @@ def prepareWords():
         }
         merged.update(newObj)
         return merged
+      
+      def export(self):
+         return self._raw if self._mode is None else self._comparative if self._mode == "comparative" else self._superlative
+      
 
 
   class Verb(Word):
@@ -208,7 +214,7 @@ def prepareWords():
         super().__init__('adv', initiate,start,add_chars)
         self.add()
   
-  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None,no_articles=False):
+  def getWords(c_limit = inf,first_word:None|Literal['noun1','noun2','verb','adjective','adverb']=None,start:str|None=None, num = None,articles:Literal["random","always","never"]="random", compare:Literal["random","always","never"]="random"):
     nonlocal char_limit,characters_used,words_generated
     char_limit = c_limit
     characters_used = 0
@@ -218,8 +224,11 @@ def prepareWords():
   
     plural1 = maybe()
     plural2 = maybe()
-    article1 = maybe() if not no_articles else False
-    article2 = maybe() if not no_articles else False
+    article1 = (not maybe(3)) if articles == "random" else articles == "always"
+    article2 = (not maybe(3)) if articles == "random" else articles == "always"
+    adjMode = None 
+    if compare != "never":adjMode = None if  maybe(3) else "comparative" if maybe() else "superlative"
+    if compare == "always" and adjMode != None:adjMode = "comparative" if maybe() else "superlative"
     
     numTarget = 0
     
@@ -232,12 +241,11 @@ def prepareWords():
         plural2 = True
         numTarget = 2
     
-
     noun1 = Noun(articled=article1, pluralized=plural1,start=start if first_word == "noun1" else None,prepend_number=num if numTarget == 1 else None)
     noun2 = Noun(articled=article2, pluralized=plural2, start=start if first_word == "noun2" else None,prepend_number=num if numTarget == 2 else None)
     verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
     adv = Adverb(start=start if first_word == "adverb" else None)
-    adj = Adjective(start=start if first_word == "adjective" else None)
+    adj = Adjective(start=start if first_word == "adjective" else None,mode=adjMode,force_mode=compare)
     return WordTuple(noun1,noun2,adv,adj,verb)
   
   return getWords

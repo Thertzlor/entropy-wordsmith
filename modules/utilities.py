@@ -3,7 +3,9 @@ from typing import Tuple
 
 listEntry = lambda l: '' if len(l) == 0 else l[randbelow(len(l))]
 
-maybe = lambda : randbelow(2) == 1
+maybe = lambda x=0 : randbelow(x or 2) == 1
+
+
 
 def wordAndIndex(l) -> Tuple[str,int]:
   if len(l) == 0:return ('',0)
