@@ -1,11 +1,13 @@
 from math import inf
 from secrets import randbelow
-from typing import Literal, NamedTuple
+from typing import Literal
 import re
 
 from modules.utilities import wordAndIndex, listEntry,maybe
 
 min_length=2
+
+def isVowel(t): return t in ('a','e','i','o','u')
 
 def getList(path):
    with open(path,'r') as resRaw:
@@ -175,7 +177,8 @@ def prepareWords():
         self._stem_past()
         
         if(not self._variants):
-          if self._multi: self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0],dummy=True)._variants)
+          if self._multi: 
+            self._variants = tuple(" ".join((x," ".join(self._split[1:]))) for x in Verb(self._split[0],dummy=True)._variants)
           else:
             [suffix,cut] = self._stem_past()
             pastTense = f'{self._raw[:cut]}{suffix}'
@@ -186,25 +189,31 @@ def prepareWords():
           [suffix,cut] = self._stem_ing()
           partic = f'{self._raw[:cut]}{suffix}'
           self._variants = (self._variants[0],partic)
-        if not self._multi:self._variants = self._variants + tuple([f'{self._raw}es' if ((self._raw.endswith('o') or self._raw.endswith('z')) and not self._raw.endswith('oo')) else f'{self._raw}es' if self._raw.endswith('h') else f'{self._raw[:-1]}ies' if self._raw.endswith('y') else f'{self._raw}es' if self._raw.endswith('s') else  f'{self._raw}s'])
+        if not self._multi:
+          [suffix,cut] = self._stem_present()
+          self._variants = self._variants + tuple([f'{self._raw[:cut]}{suffix}'])
         if not dummy:self.add()
         
-      def _stem_past(self):
-        last_letter = self._raw[-1:]
-        second_to_last = self._raw[-2:-1]
-        l = len(self._raw)
-        match last_letter:
-          case "l": return ("led",l if second_to_last in ('a','e','i','o','u') else -1)
-          case "e": return ("d",l)
-          case _: return ("ed",l)
-
       def _stem_present(self):
         last_letter = self._raw[-1:]
         second_to_last = self._raw[-2:-1]
         l = len(self._raw)
         match last_letter:
-          case "l": return ("led",l if second_to_last in ('a','e','i','o','u') else -1)
+          case "o": return ("es" if second_to_last != "o" else "os",l if second_to_last != "o" else -1)
+          case "z": return ("es",-1)
+          case "h": return ("es",l)
+          case "s": return ("es",l)
+          case "y": return ("s" if isVowel(second_to_last) else "ies",l if isVowel(second_to_last) else -1)
+          case _: return ("s",l)
+
+      def _stem_past(self):
+        last_letter = self._raw[-1:]
+        second_to_last = self._raw[-2:-1]
+        l = len(self._raw)
+        match last_letter:
+          case "l": return ("led",l if not isVowel(second_to_last) else -1)
           case "e": return ("d",l)
+          case "p": return ("ped",l)
           case _: return ("ed",l)
 
       def _stem_ing(self):
@@ -212,8 +221,9 @@ def prepareWords():
         second_to_last = self._raw[-2:-1]
         l = len(self._raw)
         match last_letter:
-          case "e": return ("ing",-1)
+          case "e": return ("ing",-1 if second_to_last not in ["e","u"] else l)
           case "l": return ("ing",l)
+          case "p": return ("ping",l if self._raw[-2:-1] != self._raw[-3:-2]  else -1)
           case _: return ("ing",l)
     
       @property
@@ -255,10 +265,9 @@ def prepareWords():
     char_limit = c_limit
     characters_used = 0
     words_generated = 0
+
     if debug_object: return single_word_debug_info(debug_object) 
-  
-    WordTuple = NamedTuple('WordTuple', [('noun1', Noun), ('noun2', Noun),('adverb',Adverb),('adjective',Adjective),('verb',Verb)])      
-  
+    
     plural1 = maybe()
     plural2 = maybe()
     article1 = (not maybe(3)) if articles == "random" else articles == "always"
@@ -283,6 +292,6 @@ def prepareWords():
     verb = Verb(tense=(None if noun1.pluralized else "past" if maybe() else "present"),start=start if first_word == "verb" else None)
     adv = Adverb(start=start if first_word == "adverb" else None,middle=enclosed_adverb)
     adj = Adjective(start=start if first_word == "adjective" else None,mode=adjMode,force_mode=compare)
-    return WordTuple(noun1,noun2,adv,adj,verb)
+    return (noun1,noun2,adv,adj,verb)
   
   return getWords

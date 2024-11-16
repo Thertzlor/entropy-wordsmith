@@ -1,5 +1,5 @@
 from math import inf
-from typing import Iterable, Callable, Literal
+from typing import Iterable, Literal
 from modules.word_parser import prepareWords
 from modules.utilities import listEntry
 
@@ -14,37 +14,32 @@ def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,e
    clean_text = lambda t:firstUp(t).replace(' ,',',').replace('  ',' ')
    
    def var1():
-      w=getWords(limit,'adverb',start,num,articles,compare)
-      finito = f"{w.adverb.export()}, {' '.join([w.noun1.export(w.adjective.export()),w.verb.export(),w.noun2.export()]).strip()}{ending}"
+      (noun1,noun2,adverb,adjective,verb)=getWords(limit,'adverb',start,num,articles,compare)
+      finito = f"{adverb.export()}, {' '.join([noun1.export(adjective.export()),verb.export(),noun2.export()]).strip()}{ending}"
       return clean_text(finito)
 
    def var2():
-      w=getWords(limit,'adjective',start,num,articles,compare)
-      finito = f"{' '.join([w.noun1.export(w.adjective.export()),w.verb.export(),w.noun2.export(),w.adverb.export()]).strip()}{ending}"
+      (noun1,noun2,adverb,adjective,verb)=getWords(limit,'adjective',start,num,articles,compare)
+      finito = f"{' '.join([noun1.export(adjective.export()),verb.export(),noun2.export(),adverb.export()]).strip()}{ending}"
       return clean_text(finito)
    
    def var3():
-      w=getWords(limit,'noun1',start,num,articles,compare)
-      finito = f"{' '.join([w.noun1.export(),w.verb.export(),w.noun2.export(w.adjective.export()),w.adverb.export()]).strip()}{ending}"
+      (noun1,noun2,adverb,adjective,verb) =getWords(limit,'noun1',start,num,articles,compare)
+      finito = f"{' '.join([noun1.export(),verb.export(),noun2.export(adjective.export()),adverb.export()]).strip()}{ending}"
       return clean_text(finito)
 
    def var4():
-      w=getWords(limit,'noun1',start,num,articles,compare,True)
-      finito = f"{' '.join([w.noun1.export(),w.adverb.export(),w.verb.export(),w.noun2.export(w.adjective.export())]).strip()}{ending}"
+      (noun1,noun2,adverb,adjective,verb)=getWords(limit,'noun1',start,num,articles,compare,True)
+      finito = f"{' '.join([noun1.export(),adverb.export(),verb.export(),noun2.export(adjective.export())]).strip()}{ending}"
       return clean_text(finito)
 
    def var5():
-      w=getWords(limit,'adjective',start,num,articles,compare,True)
-      finito = f"{w.adjective.export()}: {' '.join([w.noun1.export(),w.adverb.export(),w.verb.export(),w.noun2.export()]).strip()}{ending}"
+      (noun1,noun2,adverb,adjective,verb)=getWords(limit,'adjective',start,num,articles,compare,True)
+      finito = f"{adjective.export()}: {' '.join([noun1.export(),adverb.export(),verb.export(),noun2.export()]).strip()}{ending}"
       return clean_text(finito)
    
-   variations:list[Callable[[],str]] = []
-   variations.append(var1)
-   variations.append(var2)
-   variations.append(var3)
-   variations.append(var4)
-   variations.append(var5)
-   
+   variations = (var1,var2,var3,var4,var5)
+
    passes: list[str] = []
    failures = 0
    max_failures = 250
