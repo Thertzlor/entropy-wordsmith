@@ -10,7 +10,7 @@ def isVowel(t): return t in ('a','e','i','o','u')
 
 def getList(path):
    with open(resource_path(path),'r') as resRaw:
-     res = [m.replace('_',' ').strip() for m in resRaw.readlines() if not (len(m) <= min_length or m.startswith('  '))]
+     res = (m.replace('_',' ').strip() for m in resRaw.readlines() if not (len(m) <= min_length or m.startswith('  ')))
    return tuple(res)
 
 def getMods(path):
@@ -23,11 +23,18 @@ def getMods(path):
    [setter(r) for r in res]
    return modStore
 
+verb_type_index:list[int] = []
+
+def separate_verb(v:str):
+   split = v.split(" ")
+   verb_type_index.append(int(split.pop()))
+   return ' '.join(split)
+
 words={
    'adj' : getList('./dict/index_adj.txt'),
    'adv' : getList('./dict/index_adv.txt'),
    'noun' : getList('./dict/index_noun.txt'),
-   'verb' : getList('./dict/index_verb.txt')
+   'verb' : tuple(separate_verb(x) for x in getList('./dict/index_verb.txt'))
 }
 
 variations={
@@ -174,6 +181,7 @@ def prepareWords():
         self._continuous = continuous
         self._present = tense == "present"
         self._stem_past()
+        self._frame = verb_type_index[self._index]
         
         if(not self._variants):
           if self._multi: 
@@ -240,8 +248,27 @@ def prepareWords():
         merged.update(newObj)
         return merged
       
-      def export(self):
-        return not self._variants and self._raw or self._pastTense and self._variants[0] or self._continuous and self._variants[1] or self._present and self._variants[2] or self._raw
+      def export(self,context:str=''):         
+         verbum = not self._variants and self._raw or self._pastTense and self._variants[0] or self._continuous and self._variants[1] or self._present and self._variants[2] or self._raw
+         if self._multi:
+            splitor = verbum.split(" ")
+            match self._frame:
+               case 0: return f'{verbum} for {context}'
+               case 1: return f'{verbum} with {context}'
+               case 2: return f'{verbum} on {context}'
+               case 3: return f'{splitor.pop(0)} {context} {' '.join(splitor)}'
+               case 5: return f'{verbum} with {context}'
+               case 12: return f'{verbum} against {context}'
+               case 13: return f'{splitor.pop(0)} {context} {' '.join(splitor)}'
+               case 15: return f'{splitor.pop(0)} {context} {' '.join(splitor)}'
+               case 19: return f'{splitor.pop(0)} {context} {' '.join(splitor)}'
+               case 21: return f'{verbum} to {context}'
+               case 23: return f'{verbum} to {context}'
+               case 25: return f'{verbum} with {context}'
+               case 26: return f'{verbum} to {context}'
+               case 27: return f'{verbum} to {context}'
+               case 31: return f'{verbum} by {context}'
+         return f'{verbum}{context and f' {context}' or ''}'
 
 
   class Adverb(Word):
