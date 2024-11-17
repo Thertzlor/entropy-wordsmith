@@ -2,20 +2,19 @@ from math import inf
 from secrets import randbelow
 from typing import Literal
 import re
-
-from modules.utilities import wordAndIndex, listEntry,maybe
+from modules.utilities import wordAndIndex, listEntry,maybe,resource_path
 
 min_length=2
 
 def isVowel(t): return t in ('a','e','i','o','u')
 
 def getList(path):
-   with open(path,'r') as resRaw:
+   with open(resource_path(path),'r') as resRaw:
      res = [m.replace('_',' ').strip() for m in resRaw.readlines() if not (len(m) <= min_length or m.startswith('  '))]
    return tuple(res)
 
 def getMods(path):
-   with open(path,'r') as resRaw:
+   with open(resource_path(path),'r') as resRaw:
      res = (tuple([w.replace('_',' ').strip() for w in reversed(m.split(' '))]) for m in resRaw.readlines() if not m.startswith('  '))
    modStore = {}
    def setter(item):

@@ -1,1 +1,1 @@
-pyinstaller .\entropy_wordsmith.py -F -i .\assets\icon_256.ico
+pyinstaller .\entropy_wordsmith.py -F -i .\assets\icon_256.ico --add-data "./dict/*;./dict"
