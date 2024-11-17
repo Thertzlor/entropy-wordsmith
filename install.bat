@@ -1,0 +1,1 @@
+pyinstaller .\entropy_wordsmith.py -F -i .\assets\icon_256.ico
