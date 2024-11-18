@@ -1,4 +1,4 @@
-from modules.phrase_composer import mainProcess
+from wordsmith_modules.phrase_composer import mainProcess
 from math import inf
 from argparse import ArgumentParser
 

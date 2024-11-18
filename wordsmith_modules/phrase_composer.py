@@ -1,7 +1,7 @@
 from math import inf
 from typing import Iterable, Literal
-from modules.word_parser import prepareWords
-from modules.utilities import listEntry
+from wordsmith_modules.word_parser import prepareWords
+from wordsmith_modules.utilities import listEntry
 
 
 def saveList(wordList: Iterable[str], filePath: str):

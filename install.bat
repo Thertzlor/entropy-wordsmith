@@ -1,1 +1,1 @@
-pyinstaller .\entropy_wordsmith.py -F -i .\assets\icon_256.ico --add-data "./dict/*;./dict"
+pyinstaller .\entropy_wordsmith.py  -F -i .\assets\icon_256.ico --add-data "./dict/*;./dict" --paths wordsmith_modules/ --paths wordsmith_modules/word_parser.py --paths wordsmith_modules/utilities.py --paths ./wordsmith_modules/word_parser.py --paths wordsmith_modules/phrase_composer.py 

@@ -1,7 +1,7 @@
 from math import inf
 from secrets import randbelow
 from typing import Literal
-from modules.utilities import wordAndIndex, listEntry, maybe, resource_path
+from wordsmith_modules.utilities import wordAndIndex, listEntry, maybe, resource_path
 
 min_length = 2
 
