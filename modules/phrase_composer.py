@@ -9,8 +9,9 @@ def saveList(wordList: Iterable[str], filePath: str):
       r.write('\n'.join(wordList))
 
 
-def mainProcess(filePath='', start='', entries=10, limit=inf, noSpace=False, num=0, ending='.', mode=0, articles: Literal["random", "always", "never"] = "random", compare: Literal["random", "always", "never"] = "random"):
-   getWords, _ = prepareWords()
+def mainProcess(filePath='', start='', entries=10, limit=inf, noSpace=False, num=0, ending='.', mode=0, articles: Literal["random", "always", "never"] = "random", compare: Literal["random", "always", "never"] = "random", info_only=False):
+   getWords, info, _ = prepareWords()
+   if info_only: return info()
    firstUp = lambda w: f'{w[0].upper()}{w[1:]}'
    toFile = filePath != ''
 

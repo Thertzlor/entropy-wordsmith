@@ -319,6 +319,9 @@ def prepareWords():
       my_word = (Noun if w_type == "noun" else Verb if w_type == "verb" else Adjective if w_type == "adj" else Adverb)(*debug_object)
       print(my_word.export(), my_word.output(), sep='\n')
 
+   def dict_info():
+      print(f"Nouns: {len(words['noun'])}\nAdjectives: {len(words['adj'])}\nAdverbs: {len(words['adv'])}\nVerbs: {len(words['verb'])}")
+
    def getWords(c_limit=inf, first_word: None | Literal['noun1', 'noun2', 'verb', 'adjective', 'adverb'] = None, start: str | None = None, num=None, articles: Literal["random", "always", "never"] = "random", compare: Literal["random", "always", "never"] = "random", enclosed_adverb=False):
       nonlocal char_limit, characters_used, words_generated
       char_limit = c_limit
@@ -351,4 +354,4 @@ def prepareWords():
       adj = Adjective(start=start if first_word == "adjective" else None, mode=adjMode, force_mode=compare)
       return (noun1, noun2, adv, adj, verb)
 
-   return getWords, single_word_debug_info
+   return getWords, dict_info, single_word_debug_info

@@ -15,6 +15,7 @@ parser.add_argument('-a', '--articles', help='When to prepend nouns with article
 parser.add_argument('-c', '--comparatives', help='When to include comparative and superlative forms for adjectives: "always", "never" or "random" (default).', choices=["always", "never", "random"], metavar='', default="random")
 parser.add_argument('-u', '--underscore', action="store_true", help="Replace the spaces in the passphrase with underscores.")
 parser.add_argument('-p', '--path', type=str, help="A path of an output file. Leave blank to write the results to stdout.", metavar='', default='')
+parser.add_argument('--dictionary_info', action="store_true", help="Show the number of words in the dictionary by group and exit.")
 parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
 
 args = parser.parse_args()
@@ -24,4 +25,4 @@ if args.start and len(args.start) != 1:
 if args.mode and args.mode not in (1, 2, 3, 4, 5):
    raise SystemExit('the m/--mode argument has to be between between 1 and 5.')
 
-mainProcess(args.path, args.start, args.count, args.max_length, args.underscore, args.set_number or args.include_number, args.ending, args.mode, args.articles, args.comparatives)
+mainProcess(args.path, args.start, args.count, args.max_length, args.underscore, args.set_number or args.include_number, args.ending, args.mode, args.articles, args.comparatives, args.dictionary_info)
