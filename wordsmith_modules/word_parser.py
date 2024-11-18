@@ -340,7 +340,7 @@ def prepareWords():
 
       if num:
          if type(num) is bool:
-            num = randbelow(8) + 1
+            num = randbelow(8) + 2
          if plural1:
             num_target = 1
          else:
