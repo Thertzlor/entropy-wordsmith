@@ -136,7 +136,6 @@ def prepareWords():
          if (self._generated_plural): return
          plural_split = self._plural.split(' ')
          if (len(plural_split) != len(self._split)): return
-         if (self._raw[0].isupper()): print(self._raw)
          self._plural = ' '.join((x if (self._split[i][0].islower() or self._split[i][0].lower() != x[0]) else f"{self._split[i][0]}{x[1:]}") for i, x in enumerate(plural_split))
 
       def output(self):
