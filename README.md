@@ -94,10 +94,10 @@ In terms of combinations that gives us in total:
 
 $( (117761 * 2 * 3)^2 * (21461 * 3) * (11549 * \frac 3 2 ) * 4481 ) *5 = 12475480122631181058570090$  
 
-That's **83** bits of entropy$^1$, which is already much better and remember *this assumes the attacker already knows that you used this exact method with this exact dictionary*.$^2$
+That's **83** bits of entropy $^1$ , which is already much better and remember *this assumes the attacker already knows that you used this exact method with this exact dictionary*. $^2$
 
-$^1$Technically there's more going on than just shannon entropy, as the distribution of the modification of adjectives isn't actually uniform, but we're at least within that order of magnitude.  
-$^2$Otherwise, we're talking about more than **200** bits on average, as passphrases tend to be 50+ characters with punctuation.
+$^1$ Technically there's more going on than just shannon entropy, as the distribution of the modification of adjectives isn't actually uniform, but we're at least within that order of magnitude.  
+$^2$ Otherwise, we're talking about more than **200** bits on average, as passphrases tend to be 50+ characters with punctuation.
 
 ### Entropy with the `-i/--include_number` flag
 Using the `--include_number` option means that instead of being randomly pluralized, one of the nouns will always be pluralized and prepended with a random number between 2 and 9 inclusive.  
