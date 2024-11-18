@@ -225,11 +225,11 @@ def prepareWords():
          l = len(self._raw)
          match last_letter:
             case "l":
-               return ("led", l if not isVowel(second_to_last) else -1)
+               return ("led", l if isVowel(second_to_last) and self._raw[-3:-2] != second_to_last else -1)
             case "e":
                return ("d", l)
             case "p":
-               return ("ped", l)
+               return ("ped", l if isVowel(second_to_last) and self._raw[-3:-2] != second_to_last else -1)
             case _:
                return ("ed", l)
 
@@ -243,7 +243,7 @@ def prepareWords():
             case "l":
                return ("ing", l)
             case "p":
-               return ("ping", l if self._raw[-2:-1] != self._raw[-3:-2] else -1)
+               return ("ping", l if isVowel(second_to_last) and self._raw[-3:-2] != second_to_last else -1)
             case _:
                return ("ing", l)
 
