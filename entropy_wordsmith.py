@@ -2,7 +2,7 @@ from modules.phrase_composer import mainProcess
 from math import inf
 from argparse import ArgumentParser
 
-parser = ArgumentParser(description='Welcome to Entropy Wordsmith!',prog='Entropy Wordsmith')
+parser = ArgumentParser(description='Welcome to Entropy Wordsmith!',prog='Entropy Wordsmith',usage="entropy_wordsmith [count] [-i] [-n number] [-s start] [-l number] [-m 1|2|3|4|5] [-e string] [-a always|never|random] [-c always|never|random] [-u] [-p path] [-v] [-h]")
 
 parser.add_argument('count', type=int, default=20,help="The number of passphrases to generate. Defaults to 20.",nargs='?')
 parser.add_argument('-i','--include_number', action="store_true",help="If the password is required to contain a number, this setting will force one of the nouns to be pluralized and prepend a random number in the range of 2-9.")

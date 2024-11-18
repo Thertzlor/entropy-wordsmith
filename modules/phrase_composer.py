@@ -15,27 +15,27 @@ def mainProcess(filePath='', start='',entries=10,limit=inf,noSpace=False,num=0,e
    
    def var1():
       (noun1,noun2,adverb,adjective,verb)=getWords(limit,'adverb',start,num,articles,compare)
-      finito = f"{adverb.export()}, {' '.join([noun1.export(adjective.export()),verb.export(),noun2.export()]).strip()}{ending}"
+      finito = f"{adverb.export()}, {' '.join([noun1.export(adjective.export()),verb.export(noun2.export())]).strip()}{ending}"
       return clean_text(finito)
 
    def var2():
       (noun1,noun2,adverb,adjective,verb)=getWords(limit,'adjective',start,num,articles,compare)
-      finito = f"{' '.join([noun1.export(adjective.export()),verb.export(),noun2.export(),adverb.export()]).strip()}{ending}"
+      finito = f"{' '.join([noun1.export(adjective.export()),verb.export(noun2.export()),adverb.export()]).strip()}{ending}"
       return clean_text(finito)
    
    def var3():
       (noun1,noun2,adverb,adjective,verb) =getWords(limit,'noun1',start,num,articles,compare)
-      finito = f"{' '.join([noun1.export(),verb.export(),noun2.export(adjective.export()),adverb.export()]).strip()}{ending}"
+      finito = f"{' '.join([noun1.export(),verb.export(noun2.export(adjective.export())),adverb.export()]).strip()}{ending}"
       return clean_text(finito)
 
    def var4():
       (noun1,noun2,adverb,adjective,verb)=getWords(limit,'noun1',start,num,articles,compare,True)
-      finito = f"{' '.join([noun1.export(),adverb.export(),verb.export(),noun2.export(adjective.export())]).strip()}{ending}"
+      finito = f"{' '.join([noun1.export(),adverb.export(),verb.export(noun2.export(adjective.export()))]).strip()}{ending}"
       return clean_text(finito)
 
    def var5():
       (noun1,noun2,adverb,adjective,verb)=getWords(limit,'adjective',start,num,articles,compare,True)
-      finito = f"{adjective.export()}: {' '.join([noun1.export(),adverb.export(),verb.export(),noun2.export()]).strip()}{ending}"
+      finito = f"{adjective.export()}: {' '.join([noun1.export(),adverb.export(),verb.export(noun2.export())]).strip()}{ending}"
       return clean_text(finito)
    
    variations = (var1,var2,var3,var4,var5)
