@@ -1,5 +1,5 @@
 from math import inf
-from typing import Iterable, Literal
+from typing import Callable, Iterable, Literal
 from wordsmith_modules.word_parser import prepareWords
 from wordsmith_modules.utilities import listEntry
 
@@ -49,7 +49,8 @@ def mainProcess(filePath='', start='', entries=10, limit=inf, noSpace=False, num
    max_failures = 250
    while len(passes) < entries:
       try:
-         word = (listEntry(variations) if mode == 0 else variations[mode - 1])()
+         random_var: Callable[[], str] = listEntry(variations)
+         word = (random_var if mode == 0 else variations[mode - 1])()
          if (len(word) <= limit):
             if noSpace: word = word.replace(" ", "_")
             if not toFile: print(word)

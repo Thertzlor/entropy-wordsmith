@@ -18,7 +18,7 @@ def getList(path):
 
 def getMods(path):
    with open(resource_path(path), 'r') as resRaw:
-      res = (tuple([w.replace('_', ' ').strip() for w in reversed(m.split(' '))]) for m in resRaw.readlines() if not m.startswith('  '))
+      res = ((tuple(w.replace('_', ' ').strip() for w in reversed(m.split(' ')))) for m in resRaw.readlines() if not m.startswith('  '))
    modStore = {}
 
    def setter(item):
@@ -54,22 +54,23 @@ def prepareWords():
          nonlocal char_limit, characters_used, words_generated
          maxLength = char_limit - characters_used - max_expand
          self._type = kind
-         raw = ''
-         index = -1
+         raw: str = ''
+         index: int = -1
          self._space = add_chars
-         if initiate is not None and type(initiate) is str: raw = initiate
+         if initiate is not None and isinstance(initiate, str): raw = initiate
          elif initiate is not None:
             index = initiate
             raw = words[kind][index]
          else:
-            word_list = tuple(x for x in not start and words[kind] or tuple(w for w in words[kind] if w.startswith(start.lower())) if len(x) < maxLength)
+            target_list = words[kind] if start is None else (w for w in words[kind] if w.startswith(start.lower()))
+            word_list = tuple(x for x in target_list if len(x) < maxLength)
             if (len(word_list)) == 0: raise Exception("Could not find enough words.")
             (raw, index) = wordAndIndex(word_list)
          self._raw = raw
-         self._index = index
+         self._index: int = index
          self._empty = raw == ''
          lowraw = self._raw.lower()
-         self._variants = lowraw in variations[kind] and variations[kind][lowraw] or tuple()
+         self._variants: tuple[str, ...] = lowraw in variations[kind] and variations[kind][lowraw] or tuple()
          self._fixed_variant = None
          self._multi = " " in self._raw
          self._hyphen = "-" in self._raw
@@ -170,7 +171,7 @@ def prepareWords():
          return merged
 
       def export(self):
-         return self._raw if self._mode is None else self._comparative if self._mode == "comparative" else self._superlative
+         return self._raw if self._mode is None else (self._comparative or self._raw) if self._mode == "comparative" else (self._superlative or self._raw)
 
    class Verb(Word):
 
@@ -313,15 +314,15 @@ def prepareWords():
       def export(self):
          return f', {self._raw},' if self._multi and self._middle else self._raw
 
-   def single_word_debug_info(debug_object: list[str]):
+   def single_word_debug_info(debug_object: list):
       w_type = debug_object.pop(0)
-      my_word = (Noun if w_type == "noun" else Verb if w_type == "verb" else Adjective if w_type == "adj" else Adverb)(*debug_object)
+      my_word = (Noun if w_type == "noun" else Verb if w_type == "verb" else Adjective if w_type == "adj" else Adverb)(*(debug_object))
       print(my_word.export(), my_word.output(), sep='\n')
 
    def dict_info():
       print(f"Nouns: {len(words['noun'])}\nAdjectives: {len(words['adj'])}\nAdverbs: {len(words['adv'])}\nVerbs: {len(words['verb'])}")
 
-   def getWords(c_limit=inf, first_word: None | Literal['noun1', 'noun2', 'verb', 'adjective', 'adverb'] = None, start: str | None = None, num=None, articles: Literal["random", "always", "never"] = "random", compare: Literal["random", "always", "never"] = "random", enclosed_adverb=False):
+   def getWords(c_limit=inf, first_word: None | Literal['noun1', 'noun2', 'verb', 'adjective', 'adverb'] = None, start: str | None = None, num: int | bool | None = None, articles: Literal["random", "always", "never"] = "random", compare: Literal["random", "always", "never"] = "random", enclosed_adverb=False):
       nonlocal char_limit, characters_used, words_generated
       char_limit = c_limit
       characters_used = 0
@@ -338,7 +339,7 @@ def prepareWords():
       num_target = 0
 
       if num:
-         if type(num) is bool:
+         if isinstance(num, bool):
             num = randbelow(8) + 2
          if plural1:
             num_target = 1
