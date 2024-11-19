@@ -114,5 +114,7 @@ Generating passphrases of under 42 characters, *will* cause instability, and wil
 
 # Roadmap
 - There's always some some grammar edge cases that could be handled better.
-- Thinking about migrating the word database to the more up-to-date *Open English Wordnet*
+- Thinking about migrating the word database to the more up-to-date *Open English Wordnet*.
+- Documentation and maybe typing.
+- Perhaps an option for user provided wordnets?
 - Might try my hand at creating a GUI, we'll see.
