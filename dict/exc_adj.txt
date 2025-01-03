@@ -1,32 +1,34 @@
   1 This software and database is being provided to you, the LICENSEE, by  
-  2 Princeton University under the following license.  By obtaining, using  
-  3 and/or copying this software and database, you agree that you have  
-  4 read, understood, and will comply with these terms and conditions.:  
-  5   
-  6 Permission to use, copy, modify and distribute this software and  
-  7 database and its documentation for any purpose and without fee or  
-  8 royalty is hereby granted, provided that you agree to comply with  
-  9 the following copyright notice and statements, including the disclaimer,  
-  10 and that the same appear on ALL copies of the software, database and  
-  11 documentation, including modifications that you make for internal  
-  12 use or for distribution.  
-  13   
-  14 WordNet 3.0 Copyright 2006 by Princeton University.  All rights reserved.  
-  15   
-  16 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
-  17 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
-  18 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
-  19 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
-  20 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
-  21 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
-  22 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
-  23 OTHER RIGHTS.  
-  24   
-  25 The name of Princeton University or Princeton may not be used in  
-  26 advertising or publicity pertaining to distribution of the software  
-  27 and/or database.  Title to copyright in this software, database and  
-  28 any associated documentation shall at all times remain with  
-  29 Princeton University and LICENSEE agrees to preserve same.  
+  2 the Open English Wordnet team under the Creative Commons Attribution 4.0  
+  3 International License (CC-BY 4.0).  
+  4                  
+  5 Open English Wordnet 2023 Copyright 2023 by the Open English Wordnet team.  
+  6   
+  7 Permission to use, copy, modify and distribute this software and  
+  8 database and its documentation for any purpose and without fee or  
+  9 royalty is hereby granted, provided that you agree to comply with  
+  10 the following copyright notice and statements, including the disclaimer,  
+  11 and that the same appear on ALL copies of the software, database and  
+  12 documentation, including modifications that you make for internal  
+  13 use or for distribution.  
+  14   
+  15 WordNet 3.1 Copyright 2011 by Princeton University.  All rights reserved.  
+  16   
+  17 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+  18 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+  19 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+  20 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+  21 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+  22 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+  23 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+  24 OTHER RIGHTS.  
+  25   
+  26 The name of Princeton University or Princeton may not be used in  
+  27 advertising or publicity pertaining to distribution of the software  
+  28 and/or database.  Title to copyright in this software, database and  
+  29 any associated documentation shall at all times remain with  
+  30 Princeton University and LICENSEE agrees to preserve same.  
+after after
 airier airy
 airiest airy
 angrier angry
@@ -47,8 +49,6 @@ barmier barmy
 barmiest barmy
 battier batty
 battiest batty
-baulkier baulky
-baulkiest baulky
 bawdier bawdy
 bawdiest bawdy
 beadier beady
@@ -59,10 +59,9 @@ beefier beefy
 beefiest beefy
 beerier beery
 beeriest beery
-bendier bendy
-bendiest bendy
 best good
-better good well
+better good
+better well
 bigger big
 biggest big
 bitchier bitchy
@@ -99,14 +98,10 @@ bouncier bouncy
 bounciest bouncy
 brainier brainy
 brainiest brainy
-brashier brashy
-brashiest brashy
 brassier brassy
 brassiest brassy
 brawnier brawny
 brawniest brawny
-breathier breathy
-breathiest breathy
 breezier breezy
 breeziest breezy
 brinier briny
@@ -163,30 +158,22 @@ chillier chilly
 chilliest chilly
 chintzier chintzy
 chintziest chintzy
-chippier chippy
-chippiest chippy
 choosier choosy
 choosiest choosy
 choppier choppy
 choppiest choppy
 chubbier chubby
 chubbiest chubby
-chuffier chuffy
-chuffiest chuffy
 chummier chummy
 chummiest chummy
 chunkier chunky
 chunkiest chunky
-churchier churchy
-churchiest churchy
 clammier clammy
 clammiest clammy
 classier classy
 classiest classy
 cleanlier cleanly
 cleanliest cleanly
-clerklier clerkly
-clerkliest clerkly
 cloudier cloudy
 cloudiest cloudy
 clubbier clubby
@@ -195,8 +182,6 @@ clumsier clumsy
 clumsiest clumsy
 cockier cocky
 cockiest cocky
-collier colly
-colliest colly
 comelier comely
 comeliest comely
 comfier comfy
@@ -219,8 +204,6 @@ craggier craggy
 craggiest craggy
 crankier cranky
 crankiest cranky
-crawlier crawly
-crawliest crawly
 crazier crazy
 craziest crazy
 creamier creamy
@@ -229,8 +212,6 @@ creepier creepy
 creepiest creepy
 crispier crispy
 crispiest crispy
-crumbier crumby
-crumbiest crumby
 crumblier crumbly
 crumbliest crumbly
 crummier crummy
@@ -240,8 +221,6 @@ crustiest crusty
 curlier curly
 curliest curly
 cuter cute
-daffier daffy
-daffiest daffy
 daintier dainty
 daintiest dainty
 dandier dandy
@@ -258,8 +237,6 @@ dingier dingy
 dingiest dingy
 dinkier dinky
 dinkiest dinky
-dippier dippy
-dippiest dippy
 dirtier dirty
 dirtiest dirty
 dishier dishy
@@ -274,12 +251,8 @@ dottier dotty
 dottiest dotty
 doughier doughy
 doughiest doughy
-doughtier doughty
-doughtiest doughty
 dowdier dowdy
 dowdiest dowdy
-dowier dowie dowy
-dowiest dowie dowy
 downier downy
 downiest downy
 dozier dozy
@@ -288,16 +261,12 @@ drabber drab
 drabbest drab
 draftier drafty
 draftiest drafty
-draggier draggy
-draggiest draggy
 draughtier draughty
 draughtiest draughty
 dreamier dreamy
 dreamiest dreamy
 drearier dreary
 dreariest dreary
-dreggier dreggy
-dreggiest dreggy
 dressier dressy
 dressiest dressy
 drier dry
@@ -340,22 +309,16 @@ faultier faulty
 faultiest faulty
 feistier feisty
 feistiest feisty
-fiddlier fiddly
-fiddliest fiddly
 filmier filmy
 filmiest filmy
 filthier filthy
 filthiest filthy
-finnier finny
-finniest finny
 fishier fishy
 fishiest fishy
 fitter fit
 fittest fit
 flabbier flabby
 flabbiest flabby
-flaggier flaggy
-flaggiest flaggy
 flakier flaky
 flakiest flaky
 flashier flashy
@@ -364,8 +327,6 @@ flatter flat
 flattest flat
 flauntier flaunty
 flauntiest flaunty
-fledgier fledgy
-fledgiest fledgy
 fleecier fleecy
 fleeciest fleecy
 fleshier fleshy
@@ -398,14 +359,10 @@ foolhardier foolhardy
 foolhardiest foolhardy
 foxier foxy
 foxiest foxy
-fratchier fratchy
-fratchiest fratchy
 freakier freaky
 freakiest freaky
 freer free
 freest free
-frenchier frenchy
-frenchiest frenchy
 friendlier friendly
 friendliest friendly
 friskier frisky
@@ -416,8 +373,6 @@ frizzlier frizzly
 frizzliest frizzly
 frostier frosty
 frostiest frosty
-frouzier frouzy
-frouziest frouzy
 frowsier frowsy
 frowsiest frowsy
 frowzier frowzy
@@ -480,8 +435,6 @@ goosier goosy
 goosiest goosy
 gorier gory
 goriest gory
-gradelier gradely
-gradeliest gradely
 grainier grainy
 grainiest grainy
 grassier grassy
@@ -504,8 +457,6 @@ groovier groovy
 grooviest groovy
 grottier grotty
 grottiest grotty
-groutier grouty
-groutiest grouty
 grubbier grubby
 grubbiest grubby
 grumpier grumpy
@@ -549,13 +500,9 @@ heftier hefty
 heftiest hefty
 hepper hep
 heppest hep
-herbier herby
-herbiest herby
 hinder hind
 hipper hip
 hippest hip
-hippier hippy
-hippiest hippy
 hoarier hoary
 hoariest hoary
 holier holy
@@ -566,12 +513,8 @@ homier homey
 homiest homey
 hornier horny
 horniest horny
-horsier horsy
-horsiest horsy
 hotter hot
 hottest hot
-humpier humpy
-humpiest humpy
 hungrier hungry
 hungriest hungry
 huskier husky
@@ -582,8 +525,6 @@ inkier inky
 inkiest inky
 jaggier jaggy
 jaggiest jaggy
-jammier jammy
-jammiest jammy
 jauntier jaunty
 jauntiest jaunty
 jazzier jazzy
@@ -602,40 +543,27 @@ kinkier kinky
 kinkiest kinky
 knottier knotty
 knottiest knotty
-knurlier knurly
-knurliest knurly
 kookier kooky
 kookiest kooky
 lacier lacy
 laciest lacy
-lairier lairy
-lairiest lairy
-lakier laky
-lakiest laky
 lankier lanky
 lankiest lanky
-lathier lathy
-lathiest lathy
 lazier lazy
 laziest lazy
 leafier leafy
 leafiest leafy
 leakier leaky
 leakiest leaky
-learier leary
-leariest leary
 leerier leery
 leeriest leery
 leggier leggy
 leggiest leggy
 lengthier lengthy
 lengthiest lengthy
-limier limy
-limiest limy
-lippier lippy
-lippiest lippy
 livelier lively
 liveliest lively
+liver liver
 loftier lofty
 loftiest lofty
 logier logy
@@ -658,14 +586,10 @@ luckier lucky
 luckiest lucky
 lumpier lumpy
 lumpiest lumpy
-lunier luny
-luniest luny
 lustier lusty
 lustiest lusty
 madder mad
 maddest mad
-maltier malty
-maltiest malty
 mangier mangy
 mangiest mangy
 mankier manky
@@ -674,10 +598,6 @@ manlier manly
 manliest manly
 marshier marshy
 marshiest marshy
-massier massy
-massiest massy
-maungier maungy
-maungiest maungy
 mazier mazy
 maziest mazy
 mealier mealy
@@ -690,8 +610,6 @@ merrier merry
 merriest merry
 messier messy
 messiest messy
-miffier miffy
-miffiest miffy
 mightier mighty
 mightiest mighty
 milkier milky
@@ -702,6 +620,7 @@ mirkier mirky
 mirkiest mirky
 mistier misty
 mistiest misty
+modest modest
 moldier moldy
 moldiest moldy
 moodier moody
@@ -714,8 +633,6 @@ mouldier mouldy
 mouldiest mouldy
 mousier mousy
 mousiest mousy
-mouthier mouthy
-mouthiest mouthy
 muckier mucky
 muckiest mucky
 muddier muddy
@@ -750,8 +667,6 @@ niftier nifty
 niftiest nifty
 nippier nippy
 nippiest nippy
-nittier nitty
-nittiest nitty
 noisier noisy
 noisiest noisy
 nosier nosy
@@ -769,8 +684,6 @@ palmier palmy
 palmiest palmy
 paltrier paltry
 paltriest paltry
-pappier pappy
-pappiest pappy
 parkier parky
 parkiest parky
 pastier pasty
@@ -797,16 +710,10 @@ pickier picky
 pickiest picky
 piggier piggy
 piggiest piggy
-pinier piny
-piniest piny
 pitchier pitchy
 pitchiest pitchy
 pithier pithy
 pithiest pithy
-plashier plashy
-plashiest plashy
-platier platy
-platiest platy
 pluckier plucky
 pluckiest plucky
 plumier plumy
@@ -817,8 +724,6 @@ podgier podgy
 podgiest podgy
 pokier poky
 pokiest poky
-porkier porky
-porkiest porky
 portlier portly
 portliest portly
 pottier potty
@@ -849,8 +754,6 @@ puffier puffy
 puffiest puffy
 pulpier pulpy
 pulpiest pulpy
-punchier punchy
-punchiest punchy
 punier puny
 puniest puny
 pushier pushy
@@ -859,8 +762,6 @@ pussier pussy
 pussiest pussy
 quaggier quaggy
 quaggiest quaggy
-quakier quaky
-quakiest quaky
 queasier queasy
 queasiest queasy
 queenlier queenly
@@ -875,8 +776,6 @@ rangier rangy
 rangiest rangy
 rattier ratty
 rattiest ratty
-rattlier rattly
-rattliest rattly
 raunchier raunchy
 raunchiest raunchy
 readier ready
@@ -895,8 +794,6 @@ rockier rocky
 rockiest rocky
 roilier roily
 roiliest roily
-rookier rooky
-rookiest rooky
 roomier roomy
 roomiest roomy
 ropier ropy
@@ -927,8 +824,6 @@ sassier sassy
 sassiest sassy
 saucier saucy
 sauciest saucy
-savvier savvy
-savviest savvy
 scabbier scabby
 scabbiest scabby
 scalier scaly
@@ -951,8 +846,6 @@ scrubbier scrubby
 scrubbiest scrubby
 scruffier scruffy
 scruffiest scruffy
-scungier scungy
-scungiest scungy
 scurvier scurvy
 scurviest scurvy
 seamier seamy
@@ -1017,10 +910,6 @@ slimier slimy
 slimiest slimy
 slimmer slim
 slimmest slim
-slimsier slimsy
-slimsiest slimsy
-slinkier slinky
-slinkiest slinky
 slippier slippy
 slippiest slippy
 sloppier sloppy
@@ -1039,8 +928,6 @@ snakier snaky
 snakiest snaky
 snappier snappy
 snappiest snappy
-snatchier snatchy
-snatchiest snatchy
 snazzier snazzy
 snazziest snazzy
 sniffier sniffy
@@ -1051,8 +938,6 @@ snottier snotty
 snottiest snotty
 snowier snowy
 snowiest snowy
-snuffier snuffy
-snuffiest snuffy
 snugger snug
 snuggest snug
 soapier soapy
@@ -1087,8 +972,6 @@ spongier spongy
 spongiest spongy
 spookier spooky
 spookiest spooky
-spoonier spoony
-spooniest spoony
 sportier sporty
 sportiest sporty
 spottier spotty
@@ -1109,8 +992,6 @@ squiffier squiffy
 squiffiest squiffy
 stagier stagy
 stagiest stagy
-stalkier stalky
-stalkiest stalky
 starchier starchy
 starchiest starchy
 starrier starry
@@ -1125,7 +1006,6 @@ steamier steamy
 steamiest steamy
 stingier stingy
 stingiest stingy
-stiper striper
 stockier stocky
 stockiest stocky
 stodgier stodgy
@@ -1136,8 +1016,6 @@ stormier stormy
 stormiest stormy
 streakier streaky
 streakiest streaky
-streamier streamy
-streamiest streamy
 stretchier stretchy
 stretchiest stretchy
 stringier stringy
@@ -1162,12 +1040,11 @@ sunnier sunny
 sunniest sunny
 surlier surly
 surliest surly
+swagger swagger
 swankier swanky
 swankiest swanky
 swarthier swarthy
 swarthiest swarthy
-sweatier sweaty
-sweatiest sweaty
 tackier tacky
 tackiest tacky
 talkier talky
@@ -1214,8 +1091,6 @@ tinnier tinny
 tinniest tinny
 tipsier tipsy
 tipsiest tipsy
-tonier tony
-toniest tony
 toothier toothy
 toothiest toothy
 touchier touchy
@@ -1236,8 +1111,6 @@ trustier trusty
 trustiest trusty
 tubbier tubby
 tubbiest tubby
-turfier turfy
-turfiest turfy
 tweedier tweedy
 tweediest tweedy
 twiggier twiggy
@@ -1260,10 +1133,6 @@ unrulier unruly
 unruliest unruly
 untidier untidy
 untidiest untidy
-vastier vasty
-vastiest vasty
-viewier viewy
-viewiest viewy
 wackier wacky
 wackiest wacky
 wanner wan
@@ -1298,8 +1167,6 @@ wetter wet
 wettest wet
 whackier whacky
 whackiest whacky
-whimsier whimsy
-whimsiest whimsy
 wieldier wieldy
 wieldiest wieldy
 wilier wily
@@ -1342,8 +1209,6 @@ wrier wry
 wriest wry
 wryer wry
 wryest wry
-yarer yare
-yarest yare
 yeastier yeasty
 yeastiest yeasty
 younger young
