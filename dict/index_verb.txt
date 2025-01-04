@@ -3839,10 +3839,10 @@ euphemise 1
 euphemize 1
 Europeanise 7
 Europeanize 9
-euthanatise voodo
-euthanatize voodo
-euthanise voodo
-euthanize voodo
+euthanatise 36
+euthanatize 36
+euthanise 36
+euthanize 36
 evacuate 1
 evade 7
 evaluate 7
@@ -4037,7 +4037,7 @@ fan_out 0
 fancify 7
 fancy 7
 fancy_up 8
-fangirl voodo
+fangirl 36
 fantasise 1
 fantasize 1
 fantasy 1
@@ -4065,7 +4065,7 @@ fault 7
 favor 7
 favorite 7
 favour 8
-favourite voodo
+favourite 36
 fawn 21
 fax 1
 faze 9
@@ -5174,7 +5174,7 @@ hire_out 7
 hiss 0
 hit 1
 hit_home 0
-hit_it_off voodo
+hit_it_off 36
 hit_it_up 1
 hit_the_books 1
 hit_the_bottle 1
@@ -6265,7 +6265,7 @@ lyophilise 7
 lyophilize 7
 lyric 7
 lysogenize 10
-macadam voodo
+macadam 36
 macadamise 7
 macadamize 7
 macerate 10
@@ -6457,7 +6457,7 @@ meow 0
 mercerise 7
 mercerize 7
 merchandise 7
-mercy_kill voodo
+mercy_kill 36
 merge 0
 merit 7
 mesh 0
@@ -6684,7 +6684,7 @@ mousse 7
 mouth 1
 mouth_off 1
 move 0
-move_ahead voodo
+move_ahead 36
 move_around 7
 move_back 0
 move_back_and_forth 0
@@ -7357,10 +7357,10 @@ persuade 8
 pertain 3
 perturb 8
 peruse 7
-perv voodo
+perv 36
 pervade 10
 pervaporate 0
-perve voodo
+perve 36
 pervert 8
 pester 8
 pestle 7
@@ -8115,7 +8115,7 @@ re-argue 7
 re-arm 0
 re-assume 7
 re-create 7
-re-elect voodo
+re-elect 36
 re-emerge 0
 re-emphasise 7
 re-emphasize 7
@@ -9477,7 +9477,7 @@ slip_in 7
 slip_off 7
 slip_on 7
 slip_one's_mind 0
-slip_out voodo
+slip_out 36
 slip_up 1
 slit 7
 slither 0
@@ -11262,7 +11262,7 @@ vitriol 7
 vituperate 1
 vivify 8
 vivisect 7
-vlog voodo
+vlog 36
 vocalise 1
 vocalize 7
 vociferate 7
@@ -11299,7 +11299,7 @@ wag 0
 wage 21
 wager 1
 waggle 0
-wai voodo
+wai 36
 wail 0
 wait 1
 wait_on 8
