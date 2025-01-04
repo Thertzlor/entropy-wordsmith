@@ -1,38 +1,41 @@
   1 This software and database is being provided to you, the LICENSEE, by  
-  2 Princeton University under the following license.  By obtaining, using  
-  3 and/or copying this software and database, you agree that you have  
-  4 read, understood, and will comply with these terms and conditions.:  
-  5   
-  6 Permission to use, copy, modify and distribute this software and  
-  7 database and its documentation for any purpose and without fee or  
-  8 royalty is hereby granted, provided that you agree to comply with  
-  9 the following copyright notice and statements, including the disclaimer,  
-  10 and that the same appear on ALL copies of the software, database and  
-  11 documentation, including modifications that you make for internal  
-  12 use or for distribution.  
-  13   
-  14 WordNet 3.0 Copyright 2006 by Princeton University.  All rights reserved.  
-  15   
-  16 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
-  17 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
-  18 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
-  19 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
-  20 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
-  21 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
-  22 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
-  23 OTHER RIGHTS.  
-  24   
-  25 The name of Princeton University or Princeton may not be used in  
-  26 advertising or publicity pertaining to distribution of the software  
-  27 and/or database.  Title to copyright in this software, database and  
-  28 any associated documentation shall at all times remain with  
-  29 Princeton University and LICENSEE agrees to preserve same.  
+  2 the Open English Wordnet team under the Creative Commons Attribution 4.0  
+  3 International License (CC-BY 4.0).  
+  4                  
+  5 Open English Wordnet 2023 Copyright 2023 by the Open English Wordnet team.  
+  6   
+  7 Permission to use, copy, modify and distribute this software and  
+  8 database and its documentation for any purpose and without fee or  
+  9 royalty is hereby granted, provided that you agree to comply with  
+  10 the following copyright notice and statements, including the disclaimer,  
+  11 and that the same appear on ALL copies of the software, database and  
+  12 documentation, including modifications that you make for internal  
+  13 use or for distribution.  
+  14   
+  15 WordNet 3.1 Copyright 2011 by Princeton University.  All rights reserved.  
+  16   
+  17 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+  18 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+  19 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+  20 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+  21 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+  22 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+  23 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+  24 OTHER RIGHTS.  
+  25   
+  26 The name of Princeton University or Princeton may not be used in  
+  27 advertising or publicity pertaining to distribution of the software  
+  28 and/or database.  Title to copyright in this software, database and  
+  29 any associated documentation shall at all times remain with  
+  30 Princeton University and LICENSEE agrees to preserve same.  
 'tween
 'tween_decks
-a.d.
+A.D.
 a.k.a.
 a.m.
+A.M.
 a_bit
+a_capella
 a_cappella
 a_fortiori
 a_good_deal
@@ -93,7 +96,7 @@ across_the_nation
 actively
 actually
 acutely
-ad
+AD
 ad_hoc
 ad_infinitum
 ad_interim
@@ -171,6 +174,7 @@ alias
 alike
 all
 all-fired
+all-firedly
 all_along
 all_at_once
 all_day_long
@@ -207,6 +211,8 @@ alternatively
 altogether
 altruistically
 always
+AM
+am
 amain
 amateurishly
 amazingly
@@ -233,7 +239,6 @@ and_how
 and_so
 and_so_forth
 and_so_on
-and_then
 and_then_some
 andante
 anew
@@ -241,7 +246,7 @@ angelically
 angrily
 animatedly
 anisotropically
-anno_domini
+anno_Domini
 annoyingly
 annually
 anomalously
@@ -298,7 +303,6 @@ artificially
 artistically
 artlessly
 as
-as_a_formality
 as_a_group
 as_a_matter_of_fact
 as_far_as_possible
@@ -310,13 +314,12 @@ as_luck_would_have_it
 as_much_as_possible
 as_needed
 as_required
-as_such
 as_the_crow_flies
 as_usual
 as_we_say
 as_well
 as_yet
-asap
+ASAP
 ascetically
 asea
 asexually
@@ -354,6 +357,7 @@ at_arm's_length
 at_best
 at_bottom
 at_close_range
+at_first
 at_first_blush
 at_first_glance
 at_first_hand
@@ -372,7 +376,6 @@ at_one_time
 at_present
 at_random
 at_stake
-at_that_place
 at_the_best
 at_the_least
 at_the_most
@@ -409,8 +412,8 @@ awkwardly
 awry
 axially
 axiomatically
-b.c.
-b.c.e.
+B.C.
+B.C.E.
 baby-like
 baby-wise
 back
@@ -440,14 +443,14 @@ basely
 bashfully
 basically
 bawdily
-bc
-bce
+BC
+BCE
 beastly
 beautifully
 becomingly
 befittingly
 before
-before_christ
+before_Christ
 before_long
 beforehand
 behind
@@ -558,7 +561,6 @@ buoyantly
 bureaucratically
 busily
 but
-but_then
 buxomly
 by
 by_a_long_shot
@@ -566,7 +568,6 @@ by_all_means
 by_all_odds
 by_and_by
 by_and_large
-by_any_means
 by_artificial_means
 by_chance
 by_choice
@@ -592,8 +593,8 @@ by_the_piece
 by_the_way
 by_trial_and_error
 by_word_of_mouth
-c.e.
-c.o.d.
+C.E.
+C.O.D.
 cagily
 cajolingly
 calculatingly
@@ -623,7 +624,7 @@ causally
 caustically
 cautiously
 cavalierly
-ce
+CE
 ceaselessly
 centennially
 centrally
@@ -692,7 +693,7 @@ coarsely
 coastward
 coastwise
 coaxingly
-cod
+COD
 cognitively
 coherently
 coincidentally
@@ -712,7 +713,7 @@ comically
 commendable
 commensally
 commercially
-common_era
+Common_Era
 commonly
 communally
 compactly
@@ -949,6 +950,7 @@ deprecatively
 depressingly
 derisively
 derisorily
+derp
 descriptively
 deservedly
 designedly
@@ -1158,6 +1160,7 @@ elsewhere
 embarrassingly
 eminently
 emotionally
+emotionlessly
 empathetically
 emphatically
 empirically
@@ -1412,9 +1415,9 @@ for_anything
 for_certain
 for_dear_life
 for_each_one
-for_each_person
 for_example
 for_free
+for_fun
 for_good
 for_good_measure
 for_instance
@@ -1425,7 +1428,6 @@ for_short
 for_sure
 for_that_matter
 for_the_asking
-for_the_first_time
 for_the_moment
 for_the_most_part
 for_the_time_being
@@ -1565,13 +1567,12 @@ gloweringly
 glowingly
 glumly
 gluttonously
-god_knows_how
+God_knows_how
 goddam
 goddamn
 goddamned
 good
 good-naturedly
-good_and
 gorgeously
 governmentally
 gracefully
@@ -1721,6 +1722,7 @@ hither
 hither_and_thither
 hitherto
 hoarsely
+hollowly
 home
 homeostatically
 homeward
@@ -1756,6 +1758,7 @@ humorously
 humourlessly
 hundredfold
 hungrily
+hurridly
 hurriedly
 huskily
 hydraulically
@@ -1852,12 +1855,12 @@ in_a_broad_way
 in_a_flash
 in_a_heartfelt_way
 in_a_higher_place
-in_a_low_voice
 in_a_nutshell
 in_a_pig's_eye
 in_a_similar_way
 in_a_way
 in_absentia
+in_addition
 in_advance
 in_all
 in_all_likelihood
@@ -1872,10 +1875,10 @@ in_both_ears
 in_brief
 in_camera
 in_case
-in_chorus
 in_circles
 in_cold_blood
 in_common
+in_common_with
 in_concert
 in_conclusion
 in_darkness
@@ -1895,8 +1898,8 @@ in_front
 in_full
 in_full_action
 in_full_swing
+in_fun
 in_general
-in_good_order
 in_good_spirits
 in_good_time
 in_great_confusion
@@ -1919,13 +1922,13 @@ in_one's_own_right
 in_one_case
 in_one_ear
 in_other_words
+in_part
 in_particular
 in_passing
 in_perpetuity
 in_person
 in_place
 in_point_of_fact
-in_practice
 in_principle
 in_private
 in_public
@@ -1936,8 +1939,6 @@ in_short
 in_short_order
 in_situ
 in_so_far
-in_some_manner
-in_some_way
 in_someone's_way
 in_spades
 in_spite_of_appearance
@@ -1945,8 +1946,6 @@ in_stages
 in_stride
 in_tandem
 in_that
-in_that_location
-in_that_respect
 in_the_adjacent_apartment
 in_the_adjacent_house
 in_the_air
@@ -1956,7 +1955,6 @@ in_the_end
 in_the_first_place
 in_the_lead
 in_the_least
-in_the_long_run
 in_the_lurch
 in_the_main
 in_the_meantime
@@ -1972,7 +1970,6 @@ in_toto
 in_truth
 in_turn
 in_two_ways
-in_unison
 in_utero
 in_vacuo
 in_vain
@@ -1987,6 +1984,7 @@ inadvisably
 inalienably
 inanely
 inappropriately
+inarguably
 inarticulately
 inattentively
 inaudibly
@@ -2014,6 +2012,7 @@ inconspicuously
 incontrovertibly
 inconveniently
 incorrectly
+incorrigibly
 increasingly
 incredibly
 incredulously
@@ -2063,6 +2062,8 @@ inexorably
 inexpediently
 inexpensively
 inexpertly
+inexplicably
+inexpressibly
 inexpressively
 inextricably
 infectiously
@@ -2126,6 +2127,7 @@ instinctively
 institutionally
 instructively
 insubstantially
+insufferably
 insufficiently
 insultingly
 insuperably
@@ -2316,6 +2318,7 @@ like_an_expert
 like_blue_murder
 like_clockwork
 like_crazy
+like_fun
 like_hell
 like_kings
 like_mad
@@ -2675,7 +2678,7 @@ nutritionally
 nuttily
 o'clock
 o'er
-o.k.
+O.K.
 obdurately
 obediently
 objectionably
@@ -2704,13 +2707,14 @@ odiously
 of_a_sudden
 of_all_time
 of_course
-of_each_person
 of_late
 of_necessity
 off
 off-hand
 off-the-clock
 off_and_on
+off_the_beaten_path
+off_the_beaten_track
 off_the_cuff
 off_the_record
 offensively
@@ -2727,7 +2731,7 @@ often
 oftener
 oftentimes
 ofttimes
-ok
+OK
 okay
 ominously
 on
@@ -2741,7 +2745,6 @@ on_an_irregular_basis
 on_and_off
 on_approval
 on_average
-on_base
 on_board
 on_camera
 on_earth
@@ -2753,7 +2756,6 @@ on_paper
 on_purpose
 on_request
 on_that
-on_that_point
 on_the_average
 on_the_button
 on_the_coattails
@@ -2764,8 +2766,8 @@ on_the_fly
 on_the_nose
 on_the_one_hand
 on_the_other_hand
-on_the_q.t.
-on_the_qt
+on_the_Q.T.
+on_the_QT
 on_the_side
 on_the_sly
 on_the_spot
@@ -2782,11 +2784,13 @@ once_more
 one-on-one
 one-sidedly
 one_after_another
+one_after_the_other
 one_at_a_time
 one_by_one
 one_one's_coattails
 one_time
 onerously
+online
 only
 only_if
 only_too
@@ -2821,7 +2825,6 @@ ornately
 osmotically
 ostensibly
 ostentatiously
-other_than
 otherwise
 out
 out_and_away
@@ -2870,6 +2873,7 @@ overtly
 overwhelmingly
 owlishly
 p.a.
+P.M.
 p.m.
 pacifically
 pacifistically
@@ -2895,6 +2899,7 @@ part-time
 partially
 particularly
 partly
+parttime
 passably
 passim
 passing
@@ -2979,6 +2984,7 @@ philatelically
 philosophically
 phlegmatically
 phonemic
+phonemically
 phonetically
 photoelectrically
 photographically
@@ -3040,6 +3046,8 @@ plum
 plumb
 plump
 plunk
+pm
+PM
 pneumatically
 poetically
 poignantly
@@ -3124,7 +3132,7 @@ principally
 prissily
 privately
 privily
-prn
+PRN
 pro
 pro_forma
 pro_rata
@@ -3221,6 +3229,7 @@ quite_a
 quite_an
 quixotically
 quizzically
+rabidly
 racially
 racily
 radially
@@ -3268,6 +3277,7 @@ recurrently
 red-handed
 redly
 reflectively
+reflexively
 reflexly
 refreshfully
 refreshingly
@@ -3593,6 +3603,7 @@ so
 so-so
 so_far
 so_to_speak
+so_yeah
 soaking
 sobbingly
 soberly
@@ -3663,7 +3674,6 @@ southwestwardly
 spaceward
 spacewards
 spaciously
-sparely
 sparingly
 sparsely
 spasmodically
@@ -3884,10 +3894,8 @@ tetchily
 tete_a_tete
 thankfully
 that_is_to_say
-that_much
 the_least_bit
 the_other_way_around
-the_right_way
 the_whole_way
 theatrically
 thematically
@@ -3912,7 +3920,6 @@ thereof
 thereon
 thereto
 theretofore
-thereunder
 therewith
 therewithal
 thermally
@@ -3971,7 +3978,7 @@ to_a_higher_place
 to_a_lesser_extent
 to_a_lower_place
 to_a_man
-to_a_t
+to_a_T
 to_advantage
 to_all_intents_and_purposes
 to_and_fro
@@ -4007,6 +4014,7 @@ together_with
 tolerably
 tolerantly
 tomorrow
+tonally
 tonelessly
 tongue-in-cheek
 tonight
@@ -4076,7 +4084,6 @@ ultimately
 ultra_vires
 ultrasonically
 unabashedly
-unable_to_help
 unacceptably
 unaccompanied
 unaccountably
@@ -4137,8 +4144,6 @@ undeniably
 undependably
 under
 under_arms
-under_it
-under_that
 under_the_circumstances
 under_way
 underarm
@@ -4277,6 +4282,7 @@ unsportingly
 unsteadily
 unstintingly
 unsuccessfully
+unsufferably
 unsuitably
 unsuspectingly
 unswervingly
@@ -4310,6 +4316,7 @@ up_and_down
 up_here
 up_the_stairs
 up_to_now
+upcountry
 uphill
 uppermost
 uppishly
@@ -4397,6 +4404,7 @@ volcanically
 volitionally
 volubly
 volumetrically
+voluminously
 voluntarily
 voluptuously
 voraciously
@@ -4463,6 +4471,7 @@ winsomely
 wisely
 wishfully
 wistfully
+with_kid_gloves
 withal
 witheringly
 within
