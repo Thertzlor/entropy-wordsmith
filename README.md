@@ -1,4 +1,5 @@
 ![alt](./assets/logo_full_white.png)
+![version](https://img.shields.io/badge/version-1.1.0-blue)  
 Entropy Wordsmith is a passphrase/natural language password generator inspired by Diceware but much more complex and grandiloquent, powered by WordNet.
 
 # Mission Statement
@@ -7,12 +8,12 @@ A leading tool for this approach is [Diceware](https://diceware.dmuth.org), wher
 
 There's nothing *wrong* Diceware, it's cool and secure. But what if you could make passphrases that are more complex and more *entertaining*, natural language passwords that utilize the entirety of the English language?
 
-That is **Entropy Wordsmith** and it's ridiculous and over-the-top by design. It uses the [WordNet 3.1](https://wordnet.princeton.edu) database as a dictionary. After pruning everything shorter than 3 letters we end up with:
+That is **Entropy Wordsmith** and it's ridiculous and over-the-top by design. It uses the [Open English Wordnet 2024](https://github.com/globalwordnet/english-wordnet) database as a dictionary. After pruning everything shorter than 3 letters we end up with:
 
-**117761 Nouns.  
-21461 Adjectives.  
-11549 Verbs.  
-4481 Adverbs.**
+**124006 Nouns.  
+21634 Adjectives.  
+11612 Verbs.  
+4489 Adverbs.**
 
 As a general database of english this dataset includes not just common words but lots of proper nouns like locations or famous people, a whole bunch of niche academic terms most people haven't heard of, archaic and loan words etc.  
 ...Not to mention many of these words are already multi-word constructs. The resulting passphrases are huge, and therefore [very secure](#the-scale-and-the-math) and as a bonus they tend to be *completely nuts*.
@@ -79,7 +80,7 @@ The WordNet database contains obscenities, religious and politically charged ter
 Be prepared to encounter the occasional *spicy* password.
 
 # The Scale and the Math
-If we simply chose a random word from each list in a static order we'd get $117761 * 21461 * 11549 * 4481 = 130788863137119649$ possible combinations or 56.9 bits of entropy
+If we simply chose a random word from each list in a static order we'd get $124006 * 21634 * 1162 * 4489 = 139841526755179472$ possible combinations or 57 bits of entropy
 
 But of course we're not done here, standard output produces something much stronger, let's break it down:
 
@@ -92,9 +93,9 @@ But of course we're not done here, standard output produces something much stron
 
 In terms of combinations that gives us in total:
 
-$( (117761 * 2 * 3)^2 * (21461 * 3) * (11549 * \frac 3 2 ) * 4481 ) *5 = 12475480122631181058570090$  
+$( (124006 * 2 * 3)^2 * (21634 * 3) * (11612 * \frac 3 2 ) * 4489 ) *5 = 14046362577110256339913920$  
 
-That's **83** bits of entropy $^1$ , which is already much better and remember *this assumes the attacker already knows that you used this exact method with this exact dictionary*. $^2$
+That's **83.5** bits of entropy $^1$ , which is already much better and remember *this assumes the attacker already knows that you used this exact method with this exact dictionary*. $^2$
 
 $^1$ Technically there's more going on than just shannon entropy, as the distribution of the modification of adjectives isn't actually uniform, but we're at least within that order of magnitude.  
 $^2$ Otherwise, we're talking about more than **200** bits on average, as passphrases tend to be 50+ characters with punctuation.
@@ -102,8 +103,8 @@ $^2$ Otherwise, we're talking about more than **200** bits on average, as passph
 ### Entropy with the `-i/--include_number` flag
 Using the `--include_number` option means that instead of being randomly pluralized, one of the nouns will always be pluralized and prepended with a random number between 2 and 9 inclusive.  
 Now the number of possible combinations is:  
-$( (117761 * 2 * 3) * (117761 * 8 * 3) * (21461 *3) * (11549 * \frac 3 2 ) * 4481 ) *5 = 49901920490524724234280360$  
-...which amounts to 85 bits of entropy, 2 more than the standard setting.
+$( (124006 * 2 * 3) * (124006 * 8 * 3) * (21634 *3) * (11612 * \frac 3 2 ) * 4489 ) *5 = 56185450308441025359655680$  
+...which amounts to **85.5** bits of entropy, 2 more than the standard setting.
 
 
 # Limitations
@@ -114,7 +115,5 @@ Generating passphrases of under 42 characters, *will* cause instability, and wil
 
 # Roadmap
 - There's always some some grammar edge cases that could be handled better.
-- Thinking about migrating the word database to the more up-to-date *Open English Wordnet*.
-- Documentation and maybe typing.
 - Perhaps an option for user provided wordnets?
 - Might try my hand at creating a GUI, we'll see.
