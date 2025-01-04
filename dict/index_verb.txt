@@ -1,32 +1,33 @@
   1 This software and database is being provided to you, the LICENSEE, by  
-  2 Princeton University under the following license.  By obtaining, using  
-  3 and/or copying this software and database, you agree that you have  
-  4 read, understood, and will comply with these terms and conditions.:  
-  5   
-  6 Permission to use, copy, modify and distribute this software and  
-  7 database and its documentation for any purpose and without fee or  
-  8 royalty is hereby granted, provided that you agree to comply with  
-  9 the following copyright notice and statements, including the disclaimer,  
-  10 and that the same appear on ALL copies of the software, database and  
-  11 documentation, including modifications that you make for internal  
-  12 use or for distribution.  
-  13   
-  14 WordNet 3.0 Copyright 2006 by Princeton University.  All rights reserved.  
-  15   
-  16 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
-  17 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
-  18 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
-  19 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
-  20 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
-  21 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
-  22 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
-  23 OTHER RIGHTS.  
-  24   
-  25 The name of Princeton University or Princeton may not be used in  
-  26 advertising or publicity pertaining to distribution of the software  
-  27 and/or database.  Title to copyright in this software, database and  
-  28 any associated documentation shall at all times remain with  
-  29 Princeton University and LICENSEE agrees to preserve same.  
+  2 the Open English Wordnet team under the Creative Commons Attribution 4.0  
+  3 International License (CC-BY 4.0).  
+  4                  
+  5 Open English Wordnet 2023 Copyright 2023 by the Open English Wordnet team.  
+  6   
+  7 Permission to use, copy, modify and distribute this software and  
+  8 database and its documentation for any purpose and without fee or  
+  9 royalty is hereby granted, provided that you agree to comply with  
+  10 the following copyright notice and statements, including the disclaimer,  
+  11 and that the same appear on ALL copies of the software, database and  
+  12 documentation, including modifications that you make for internal  
+  13 use or for distribution.  
+  14   
+  15 WordNet 3.1 Copyright 2011 by Princeton University.  All rights reserved.  
+  16   
+  17 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+  18 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+  19 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+  20 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+  21 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+  22 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+  23 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+  24 OTHER RIGHTS.  
+  25   
+  26 The name of Princeton University or Princeton may not be used in  
+  27 advertising or publicity pertaining to distribution of the software  
+  28 and/or database.  Title to copyright in this software, database and  
+  29 any associated documentation shall at all times remain with  
+  30 Princeton University and LICENSEE agrees to preserve same.  
 aah 1
 abacinate 8
 abandon 7
@@ -1189,6 +1190,7 @@ breeze_through 7
 brevet 8
 brew 0
 bribe 8
+brick 7
 brick_in 7
 brick_over 7
 brick_up 7
@@ -1222,7 +1224,6 @@ bring_round 8
 bring_through 7
 bring_to 8
 bring_to_bear 7
-bring_together 3
 bring_up 7
 brisk 0
 brisk_up 0
@@ -1621,6 +1622,7 @@ catenate 10
 catenulate 10
 cater 7
 caterwaul 0
+catfish 8
 cathect 9
 catheterise 7
 catheterize 7
@@ -1730,6 +1732,7 @@ chastise 8
 chat 1
 chat_up 1
 chatter 0
+chaturbate 1
 chauffeur 1
 chaw 7
 cheapen 7
@@ -2355,7 +2358,6 @@ coordinate 7
 cop 7
 cop_out 1
 cope 1
-cope_with 7
 copolymerise 0
 copolymerize 0
 copper 7
@@ -2394,6 +2396,7 @@ corset 8
 coruscate 0
 cosh 7
 cosign 1
+cosplay 1
 cosponsor 7
 cosset 8
 cost 10
@@ -2487,6 +2490,7 @@ craze 9
 creak 0
 cream 7
 cream_off 7
+creampie 8
 crease 0
 create 7
 create_by_mental_act 7
@@ -2595,6 +2599,7 @@ culminate 3
 cultivate 7
 culture 7
 cumber 7
+cumswallow 1
 cumulate 0
 cup 7
 curb 7
@@ -3834,6 +3839,10 @@ euphemise 1
 euphemize 1
 Europeanise 7
 Europeanize 9
+euthanatise voodo
+euthanatize voodo
+euthanise voodo
+euthanize voodo
 evacuate 1
 evade 7
 evaluate 7
@@ -4028,6 +4037,7 @@ fan_out 0
 fancify 7
 fancy 7
 fancy_up 8
+fangirl voodo
 fantasise 1
 fantasize 1
 fantasy 1
@@ -4053,7 +4063,9 @@ fatten_out 7
 fatten_up 7
 fault 7
 favor 7
+favorite 7
 favour 8
+favourite voodo
 fawn 21
 fax 1
 faze 9
@@ -4326,6 +4338,7 @@ fold 7
 fold_up 7
 foliate 7
 folk_dance 1
+follback 8
 follow 0
 follow_out 7
 follow_suit 1
@@ -4455,6 +4468,7 @@ freshen_up 7
 fress 1
 fret 1
 fricassee 7
+friendzone 8
 frig_around 1
 fright 8
 frighten 8
@@ -4487,6 +4501,7 @@ fry 1
 FTP 7
 fuck 1
 fuck_off 1
+fuck_shit_up 1
 fuck_up 1
 fuddle 9
 fudge 1
@@ -4543,6 +4558,7 @@ gang 8
 gang-rape 8
 gang_up 8
 gangrene 22
+gank 7
 gaol 8
 gap 7
 gape 1
@@ -4583,6 +4599,8 @@ gazump 8
 gear 14
 gear_up 1
 gee 0
+geek 1
+geek_out 1
 gel 0
 gelatinise 0
 gelatinize 7
@@ -4665,6 +4683,7 @@ get_wind 7
 get_wise 1
 get_word 1
 get_worse 1
+get_your_shit_together 1
 geyser 0
 ghettoise 8
 ghettoize 8
@@ -4750,6 +4769,7 @@ glimpse 7
 glint 0
 glissade 1
 glisten 0
+glitch 0
 glitter 0
 gloat 1
 globalise 7
@@ -4776,7 +4796,6 @@ gnaw_at 0
 go 0
 go_a_long_way 0
 go_about 32
-go_across 7
 go_after 7
 go_against 7
 go_ahead 0
@@ -4875,6 +4894,7 @@ graze 0
 grease 7
 grease_one's_palms 8
 green 0
+greenlight 7
 greet 8
 grey 7
 griddle 7
@@ -4911,6 +4931,7 @@ grout 7
 grovel 21
 grow 3
 grow_over 10
+grow_together 1
 grow_up 1
 growl 0
 grub 1
@@ -5153,6 +5174,7 @@ hire_out 7
 hiss 0
 hit 1
 hit_home 0
+hit_it_off voodo
 hit_it_up 1
 hit_the_books 1
 hit_the_bottle 1
@@ -5532,6 +5554,7 @@ inspire 8
 inspirit 8
 inspissate 7
 instal 7
+instalike 7
 install 7
 instance 7
 instantiate 10
@@ -5714,6 +5737,7 @@ jewel 7
 jib 1
 jibe 0
 jig 1
+jigg 1
 jiggle 0
 jilt 8
 jimmy 7
@@ -5820,6 +5844,7 @@ kick 7
 kick-start 7
 kick_about 0
 kick_around 0
+kick_ass 1
 kick_back 7
 kick_down 7
 kick_downstairs 8
@@ -6139,6 +6164,7 @@ lock 7
 lock_away 7
 lock_in 7
 lock_out 8
+lock_pick 7
 lock_up 7
 locomote 0
 lodge 21
@@ -6199,7 +6225,6 @@ lose_one's_temper 1
 lose_sight_of 7
 lose_track 1
 lot 7
-lose_weight 1
 louden 0
 lounge 1
 lounge_about 1
@@ -6240,6 +6265,7 @@ lyophilise 7
 lyophilize 7
 lyric 7
 lysogenize 10
+macadam voodo
 macadamise 7
 macadamize 7
 macerate 10
@@ -6302,6 +6328,7 @@ make_up_one's_mind 1
 make_vibrant_sounds 0
 make_water 0
 make_way 1
+make_whoopee 1
 make_whoopie 1
 maledict 7
 malfunction 0
@@ -6430,6 +6457,7 @@ meow 0
 mercerise 7
 mercerize 7
 merchandise 7
+mercy_kill voodo
 merge 0
 merit 7
 mesh 0
@@ -6656,6 +6684,7 @@ mousse 7
 mouth 1
 mouth_off 1
 move 0
+move_ahead voodo
 move_around 7
 move_back 0
 move_back_and_forth 0
@@ -6780,7 +6809,6 @@ nickname 13
 nictate 1
 nictitate 1
 niggle 1
-nigrify 7
 nip 7
 nip_off 7
 nitpick 1
@@ -7004,6 +7032,7 @@ overcapitalise 7
 overcapitalize 7
 overcast 10
 overcharge 8
+overclock 7
 overclothe 8
 overcloud 0
 overcome 7
@@ -7087,6 +7116,7 @@ overstuff 7
 oversupply 7
 overtake 8
 overtax 8
+overthink 7
 overthrow 7
 overtire 8
 overtop 10
@@ -7327,8 +7357,10 @@ persuade 8
 pertain 3
 perturb 8
 peruse 7
+perv voodo
 pervade 10
 pervaporate 0
+perve voodo
 pervert 8
 pester 8
 pestle 7
@@ -7348,10 +7380,12 @@ phlebotomize 8
 phonate 1
 phone 1
 phosphoresce 10
+photobomb 1
 photocopy 1
 photograph 1
 photosensitise 7
 photosensitize 7
+photoshop 7
 photostat 1
 phrase 7
 pick 7
@@ -7898,6 +7932,7 @@ push_out 7
 push_through 0
 push_up 7
 pussyfoot 21
+pussyfuck 8
 put 20
 put_across 7
 put_aside 7
@@ -8080,6 +8115,7 @@ re-argue 7
 re-arm 0
 re-assume 7
 re-create 7
+re-elect voodo
 re-emerge 0
 re-emphasise 7
 re-emphasize 7
@@ -8097,7 +8133,6 @@ reach_into 10
 reach_one's_nostrils 0
 reach_out 21
 react 1
-reacquaint 5
 reactivate 7
 read 1
 read_between_the_lines 1
@@ -8282,6 +8317,7 @@ regift 1
 regiment 7
 register 7
 regorge 1
+regram 7
 regress 0
 regret 7
 regroup 0
@@ -8446,6 +8482,7 @@ request 7
 require 10
 requisition 23
 requite 7
+requote 7
 reread 7
 rerun 7
 rescale 7
@@ -8572,6 +8609,7 @@ revolve 3
 revolve_about 9
 revolve_around 9
 reward 7
+rewatch 7
 rewind 7
 rewire 7
 reword 7
@@ -8859,6 +8897,7 @@ scar 7
 scare 8
 scare_away 9
 scare_off 9
+scare_the_bejesus 35
 scarf 1
 scarf_out 21
 scarify 7
@@ -8922,6 +8961,7 @@ screech 0
 screen 7
 screen_off 7
 screen_out 7
+screenshot 7
 screw 1
 screw_up 7
 scribble 7
@@ -9116,6 +9156,7 @@ share 7
 shark 1
 sharpen 7
 sharpshoot 1
+shart 1
 shatter 0
 shave 1
 she-bop 1
@@ -9240,6 +9281,7 @@ sick 1
 sicken 8
 side 21
 side-slip 0
+side_with 8
 sideline 8
 sidestep 7
 sideswipe 7
@@ -9324,6 +9366,7 @@ skate_over 4
 skateboard 1
 skedaddle 1
 sketch 7
+sketch_out 7
 skew 0
 skewer 7
 ski 1
@@ -9360,6 +9403,7 @@ sky_dive 1
 skydive 1
 skyjack 7
 skylark 21
+skype 1
 skyrocket 0
 slabber 1
 slack 1
@@ -9433,6 +9477,7 @@ slip_in 7
 slip_off 7
 slip_on 7
 slip_one's_mind 0
+slip_out voodo
 slip_up 1
 slit 7
 slither 0
@@ -9505,6 +9550,7 @@ snap_at 7
 snap_back 1
 snap_off 7
 snap_up 7
+snapchat 1
 snare 7
 snarf 7
 snarl 1
@@ -9636,6 +9682,7 @@ spatchcock 7
 spatter 7
 spawn 7
 spay 8
+spaz 1
 speak 1
 speak_for 7
 speak_in_tongues 1
@@ -9878,6 +9925,7 @@ steamroll 20
 steamroller 20
 steel 8
 steel_oneself_against 7
+steel_oneself_for 7
 steel_onself_for 7
 steep 8
 steepen 0
@@ -10126,7 +10174,6 @@ sunder 7
 suntan 1
 sup 7
 superannuate 8
-supercede 7
 supercharge 7
 superfetate 0
 superimpose 7
@@ -10229,6 +10276,7 @@ switch-hit 1
 switch_off 7
 switch_on 7
 switch_over 1
+switch_up 7
 swivel 0
 swob 7
 swoon 1
@@ -10396,6 +10444,7 @@ talk_terms 7
 talk_through_one's_hat 1
 talk_turkey 1
 tally 0
+talmbout 1
 tame 8
 tamp 7
 tamp_down 7
@@ -10501,6 +10550,7 @@ test_drive 7
 test_fly 7
 testify 1
 tether 7
+text 7
 thank 8
 thatch 7
 thaw 0
@@ -10557,6 +10607,7 @@ thrust 13
 thrust_ahead 21
 thrust_out 7
 thud 0
+thug 1
 thumb 1
 thumbtack 7
 thump 0
@@ -10890,6 +10941,7 @@ tweak 7
 tweedle 0
 tweet 0
 tweeze 7
+twerk 1
 twiddle 0
 twig 0
 twill 7
@@ -11000,7 +11052,9 @@ unearth 7
 unfasten 7
 unfit 9
 unfold 0
+unfollow 8
 unfreeze 0
+unfriend 8
 unfrock 8
 unfurl 0
 unhallow 7
@@ -11053,6 +11107,7 @@ unscramble 7
 unscrew 7
 unseal 7
 unseat 8
+unsee 7
 unsettle 9
 unsex 8
 unsheathe 7
@@ -11066,6 +11121,7 @@ unstring 7
 unstuff 7
 unsubstantialise 10
 unsubstantialize 10
+untag 7
 untangle 7
 unteach 13
 unthaw 0
@@ -11083,6 +11139,7 @@ unzip 7
 up 7
 upbraid 8
 upchuck 1
+upcycle 7
 update 7
 upend 0
 upgrade 7
@@ -11096,6 +11153,7 @@ uprise 0
 uproot 8
 upset 7
 upstage 8
+upvote 7
 urbanise 7
 urbanize 7
 urge 23
@@ -11129,6 +11187,7 @@ vandalise 7
 vandalize 7
 vanish 0
 vanquish 7
+vape 1
 vaporise 7
 vaporize 8
 variegate 7
@@ -11142,6 +11201,7 @@ vaticinate 7
 vault 7
 vaunt 1
 veer 0
+veg_out 1
 vege_out 1
 vegetate 1
 veil 7
@@ -11172,6 +11232,7 @@ vesture 8
 vet 1
 veto 7
 vex 8
+vibe 1
 vibrate 0
 victimise 8
 victimize 8
@@ -11201,6 +11262,7 @@ vitriol 7
 vituperate 1
 vivify 8
 vivisect 7
+vlog voodo
 vocalise 1
 vocalize 7
 vociferate 7
@@ -11237,6 +11299,7 @@ wag 0
 wage 21
 wager 1
 waggle 0
+wai voodo
 wail 0
 wait 1
 wait_on 8
@@ -11433,6 +11496,7 @@ widow 8
 wield 7
 wiggle 0
 wigwag 1
+wildin' 1
 will 7
 wilt 0
 win 1

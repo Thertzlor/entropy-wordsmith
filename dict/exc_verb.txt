@@ -1,40 +1,39 @@
   1 This software and database is being provided to you, the LICENSEE, by  
-  2 Princeton University under the following license.  By obtaining, using  
-  3 and/or copying this software and database, you agree that you have  
-  4 read, understood, and will comply with these terms and conditions.:  
-  5   
-  6 Permission to use, copy, modify and distribute this software and  
-  7 database and its documentation for any purpose and without fee or  
-  8 royalty is hereby granted, provided that you agree to comply with  
-  9 the following copyright notice and statements, including the disclaimer,  
-  10 and that the same appear on ALL copies of the software, database and  
-  11 documentation, including modifications that you make for internal  
-  12 use or for distribution.  
-  13   
-  14 WordNet 3.0 Copyright 2006 by Princeton University.  All rights reserved.  
-  15   
-  16 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
-  17 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
-  18 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
-  19 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
-  20 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
-  21 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
-  22 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
-  23 OTHER RIGHTS.  
-  24   
-  25 The name of Princeton University or Princeton may not be used in  
-  26 advertising or publicity pertaining to distribution of the software  
-  27 and/or database.  Title to copyright in this software, database and  
-  28 any associated documentation shall at all times remain with  
-  29 Princeton University and LICENSEE agrees to preserve same.  
+  2 the Open English Wordnet team under the Creative Commons Attribution 4.0  
+  3 International License (CC-BY 4.0).  
+  4                  
+  5 Open English Wordnet 2023 Copyright 2023 by the Open English Wordnet team.  
+  6   
+  7 Permission to use, copy, modify and distribute this software and  
+  8 database and its documentation for any purpose and without fee or  
+  9 royalty is hereby granted, provided that you agree to comply with  
+  10 the following copyright notice and statements, including the disclaimer,  
+  11 and that the same appear on ALL copies of the software, database and  
+  12 documentation, including modifications that you make for internal  
+  13 use or for distribution.  
+  14   
+  15 WordNet 3.1 Copyright 2011 by Princeton University.  All rights reserved.  
+  16   
+  17 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+  18 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+  19 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+  20 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+  21 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+  22 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+  23 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+  24 OTHER RIGHTS.  
+  25   
+  26 The name of Princeton University or Princeton may not be used in  
+  27 advertising or publicity pertaining to distribution of the software  
+  28 and/or database.  Title to copyright in this software, database and  
+  29 any associated documentation shall at all times remain with  
+  30 Princeton University and LICENSEE agrees to preserve same.  
 abetted abet
 abetting abet
 abhorred abhor
 abhorring abhor
 abode abide
 abought aby
-about-shipped about-ship
-about-shipping about-ship
 abutted abut
 abutting abut
 abye aby
@@ -49,9 +48,6 @@ addrest address
 admitted admit
 admitting admit
 aerified aerify
-air-dried air-dry
-airdropped airdrop
-airdropping airdrop
 alkalified alkalify
 allied ally
 allotted allot
@@ -63,11 +59,12 @@ am be
 ammonified ammonify
 amnestied amnesty
 amplified amplify
-anglified anglify
 annulled annul
 annulling annul
-appalled appal appall
-appalling appal appall
+appalled appal
+appalled appall
+appalling appal
+appalling appall
 applied apply
 arcked arc
 arcking arc
@@ -84,8 +81,6 @@ awoken awake
 babied baby
 baby-sat baby-sit
 baby-sitting baby-sit
-back-pedalled back-pedal
-back-pedalling back-pedal
 backbit backbite
 backbitten backbite
 backslid backslide
@@ -111,8 +106,7 @@ beaten beat
 beatified beatify
 beautified beautify
 became become
-became_known become_known
-becomes_known become_known
+bed bed
 bedded bed
 bedding bed
 bedevilled bedevil
@@ -132,7 +126,6 @@ begetting beget
 begged beg
 begging beg
 beginning begin
-begirt begird
 begot beget
 begotten beget
 begun begin
@@ -146,7 +139,6 @@ belly-flopping belly-flop
 belying belie
 benefitted benefit
 benefitting benefit
-benempt bename
 bent bend
 berried berry
 besetting beset
@@ -159,9 +151,7 @@ bestrewn bestrew
 bestrid bestride
 bestridden bestride
 bestrode bestride
-betaken betake
 bethought bethink
-betook betake
 betted bet
 betting bet
 bevelled bevel
@@ -172,12 +162,8 @@ bidden bid
 bidding bid
 binned bin
 binning bin
-bird-dogged bird-dog
-bird-dogging bird-dog
 bit bite
-bitted bit
 bitten bite
-bitting bit
 bivouacked bivouac
 bivouacking bivouac
 blabbed blab
@@ -190,17 +176,12 @@ blatting blat
 bled bleed
 blest bless
 blew blow
-blew_one's_nose blow_one's_nose
-blipped blip
-blipping blip
 blobbed blob
 blobbing blob
 bloodied bloody
 blotted blot
 blotting blot
-blowing_one's_nose blow_one's_nose
 blown blow
-blows_one's_nose blow_one's_nose
 blubbed blub
 blubbing blub
 blue-pencilled blue-pencil
@@ -210,14 +191,9 @@ blurring blur
 bobbed bob
 bobbing bob
 bodied body
-bogged-down bog-down
 bogged_down bog_down
-bogging-down bog-down
 bogging_down bog_down
-bogs-down bog-down
 bogs_down bog_down
-booby-trapped booby-trap
-booby-trapping booby-trap
 bootlegged bootleg
 bootlegging bootleg
 bopped bop
@@ -225,12 +201,10 @@ bopping bop
 bore bear
 born bear
 borne bear
-bottle-fed bottle-feed
 bought buy
 bound bind
 bragged brag
 bragging brag
-breast-fed breast-feed
 bred breed
 brevetted brevet
 brevetting brevet
@@ -240,7 +214,6 @@ broke break
 broken break
 brought bring
 browbeaten browbeat
-brutified brutify
 budded bud
 budding bud
 bugged bug
@@ -250,8 +223,6 @@ bulldogging bulldog
 bullied bully
 bullshitted bullshit
 bullshitting bullshit
-bullwhipped bullwhip
-bullwhipping bullwhip
 bullyragged bullyrag
 bullyragging bullyrag
 bummed bum
@@ -266,9 +237,12 @@ busied busy
 bypast bypass
 caballed cabal
 caballing cabal
-caddied caddie caddy
-caddies caddie caddy
-caddying caddie caddy
+caddied caddie
+caddied caddy
+caddies caddie
+caddies caddy
+caddying caddie
+caddying caddy
 calcified calcify
 came come
 canalled canal
@@ -283,14 +257,10 @@ capped cap
 capping cap
 carburetted carburet
 carburetting carburet
-carillonned carillon
-carillonning carillon
-carnied carny
 carnified carnify
 carolled carol
 carolling carol
 carried carry
-casefied casefy
 catnapped catnap
 catnapping catnap
 catted cat
@@ -321,10 +291,8 @@ chiselling chisel
 chitchatted chitchat
 chitchatting chitchat
 chivied chivy
-chivved chiv
 chivvied chivy
 chivvies chivy
-chivving chiv
 chivvying chivy
 chondrified chondrify
 chopped chop
@@ -333,11 +301,8 @@ chose choose
 chosen choose
 chugged chug
 chugging chug
-chummed chum
-chumming chum
 citified citify
 clad clothe
-cladding clad
 clammed clam
 clamming clam
 clapped clap
@@ -345,9 +310,6 @@ clapping clap
 clarified clarify
 classified classify
 cleft cleave
-clemmed clem
-clemming clem
-clept clepe
 clipped clip
 clipping clip
 clogged clog
@@ -361,16 +323,12 @@ cloven cleave
 clubbed club
 clubbing club
 clung cling
-co-opted coopt
-co-opting coopt
-co-opts coopts
 co-ordinate coordinate
 co-ordinated coordinate
 co-ordinates coordinate
 co-ordinating coordinate
 co-starred co-star
 co-starring co-star
-cockneyfied cockneyfy
 codded cod
 codding cod
 codified codify
@@ -432,13 +390,8 @@ cubbed cub
 cubbing cub
 cudgelled cudgel
 cudgelling cudgel
-cupelled cupel
-cupelling cupel
 cupped cup
 cupping cup
-curetted curet
-curettes curet
-curetting curet
 curried curry
 curst curse
 curtsied curtsy
@@ -447,31 +400,20 @@ curvetting curvet
 cutting cut
 dabbed dab
 dabbing dab
-dagged dag
-dagging dag
 dallied dally
 dammed dam
 damming dam
-damnified damnify
 dandified dandify
-dapped dap
-dapping dap
 dealt deal
 debarred debar
 debarring debar
 debugged debug
 debugging debug
-debussed debus
-debusses debus
-debussing debus
 decalcified decalcify
 declassified declassify
 decontrolled decontrol
 decontrolling decontrol
 decried decry
-deep-freeze deepfreeze
-deep-freezed deepfreeze
-deep-freezes deepfreeze
 deep-fried deep-fry
 deferred defer
 deferring defer
@@ -481,8 +423,6 @@ degasses degas
 degassing degas
 dehumidified dehumidify
 deified deify
-demitted demit
-demitting demit
 demobbed demob
 demobbing demob
 demulsified demulsify
@@ -492,8 +432,6 @@ demystified demystify
 denazified denazify
 denied deny
 denitrified denitrify
-denned den
-denning den
 descried descry
 deterred deter
 deterring deter
@@ -505,8 +443,6 @@ diagrammed diagram
 diagramming diagram
 dialled dial
 dialling dial
-dibbed dib
-dibbing dib
 did do
 digging dig
 dignified dignify
@@ -518,8 +454,6 @@ dinning din
 dipped dip
 dipping dip
 dirtied dirty
-disannulled disannul
-disannulling disannul
 disbarred disbar
 disbarring disbar
 disbudded disbud
@@ -527,10 +461,6 @@ disbudding disbud
 disembodied disembody
 disembowelled disembowel
 disembowelling disembowel
-disenthralled disenthral disenthrall
-disenthralling disenthral disenthrall
-disenthralls disenthral
-disenthrals disenthrall
 dishevelled dishevel
 dishevelling dishevel
 disinterred disinter
@@ -539,25 +469,20 @@ dispelled dispel
 dispelling dispel
 disqualified disqualify
 dissatisfied dissatisfy
-distilled distil distill
-distilling distil distill
+distilled distil
+distilled distill
+distilling distil
+distilling distill
 diversified diversify
-divvied divvy
 dizzied dizzy
 dogged dog
 dogging dog
-doglegged dogleg
-doglegging dogleg
-dollied dolly
 done do
 donned don
 donning don
 dotted dot
 dotting dot
-dought dow
 dove dive
-drabbed drab
-drabbing drab
 dragged drag
 dragging drag
 drank drink
@@ -591,21 +516,15 @@ dunned dun
 dunning dun
 dwelt dwell
 dying die
-easied easy
 eaten eat
 eavesdropped eavesdrop
 eavesdropping eavesdrop
 eddied eddy
 edified edify
-ego-tripped ego-trip
-ego-tripping ego-trip
 electrified electrify
 embedded embed
 embedding embed
 embodied embody
-embussed embus
-embusses embus
-embussing embus
 emitted emit
 emitting emit
 empanelled empanel
@@ -616,16 +535,17 @@ enamelled enamel
 enamelling enamel
 englutted englut
 englutting englut
-enrolled enrol enroll
-enrolling enrol enroll
-enthralled enthral enthrall
-enthralling enthral enthrall
-entrammelled entrammel
-entrammelling entrammel
+enrolled enrol
+enrolled enroll
+enrolling enrol
+enrolling enroll
+enthralled enthral
+enthralled enthrall
+enthralling enthral
+enthralling enthrall
 entrapped entrap
 entrapping entrap
 envied envy
-enwound enwind
 enwrapped enwrap
 enwrapping enwrap
 equalled equal
@@ -634,18 +554,14 @@ equipped equip
 equipping equip
 espied espy
 esterified esterify
-estopped estop
-estopping estop
 etherified etherify
 excelled excel
 excelling excel
 exemplified exemplify
 expelled expel
 expelling expel
-extolled extol extoll
-extolling extol extoll
-facetted facet
-facetting facet
+extolled extol
+extolling extol
 fagged fag
 fagging fag
 fallen fall
@@ -659,35 +575,24 @@ fatting fat
 featherbedded featherbed
 featherbedding featherbed
 fed feed
-feed feed fee
+feed fee
+feed feed
 fell fall
 felt feel
 ferried ferry
 fibbed fib
 fibbing fib
-figged fig
-figging fig
 filled_up fill_up
-fine-drawn fine-draw
-fine-drew fine-draw
 finned fin
 finning fin
 fitted fit
 fitting fit
 flagged flag
 flagging flag
-flammed flam
-flamming flam
-flannelled flannel
-flannelling flannel
 flapped flap
 flapping flap
-flatted flat
-flatting flat
 fled flee
 flew fly
-flimflammed flimflam
-flimflamming flimflam
 flip-flopped flip-flop
 flip-flopping flip-flop
 flipped flip
@@ -704,8 +609,6 @@ flubbed flub
 flubbing flub
 flung fling
 flurried flurry
-flyblew flyblow
-flyblown flyblow
 fobbed fob
 fobbing fob
 fogged fog
@@ -719,20 +622,12 @@ forbidding forbid
 forbore forbear
 forborne forbear
 force-fed force-feed
-fordid fordo
-fordone fordo
-foredid foredo
-foredone foredo
 foregone forego
 foreknew foreknow
 foreknown foreknow
-foreran forerun
-forerunning forerun
 foresaw foresee
 foreseen foresee
 foreshown foreshow
-forespoke forespeak
-forespoken forespeak
 foretold foretell
 forewent forego
 forgave forgive
@@ -745,8 +640,6 @@ formatted format
 formatting format
 forsaken forsake
 forsook forsake
-forspoke forspeak
-forspoken forspeak
 forswore forswear
 forsworn forswear
 fortified fortify
@@ -758,15 +651,10 @@ foxtrotting foxtrot
 frapped frap
 frapping frap
 freeze-dried freeze-dry
-frenchified frenchify
-frenzied frenzy
+frenchified Frenchify
 fretted fret
 fretting fret
 fried fry
-frigged frig
-frigging frig
-fritted frit fritt
-fritting frit fritt
 frivolled frivol
 frivolling frivol
 frogged frog
@@ -778,14 +666,12 @@ frozen freeze
 fructified fructify
 fuelled fuel
 fuelling fuel
-fulfilled fulfil fulfill
-fulfilling fulfil fulfill
-funned fun
+fulfilled fulfil
+fulfilled fulfill
+fulfilling fulfil
+fulfilling fulfill
 funnelled funnel
 funnelling funnel
-funning fun
-furred fur
-furring fur
 gadded gad
 gadding gad
 gagged gag
@@ -793,11 +679,7 @@ gagging gag
 gainsaid gainsay
 gambolled gambol
 gambolling gambol
-gammed gam
-gamming gam
 gan gin
-ganned gan
-ganning gan
 gapped gap
 gapping gap
 gasified gasify
@@ -808,25 +690,11 @@ gave give
 gelled gel
 gelling gel
 gelt geld
-gemmed gem
-gemming gem
-genned-up gen-up
-genning-up gen-up
-gens-up gen-up
-gets_lost get_lost
 gets_started get_started
 getting get
-getting_lost get_lost
 getting_started get_started
 ghostwritten ghostwrite
 ghostwrote ghostwrite
-gibbed gib
-gibbing gib
-giddied giddy
-giftwrapped giftwrap
-giftwrapping giftwrap
-gigged gig
-gigging gig
 gilt gild
 ginned gin
 ginning gin
@@ -843,16 +711,11 @@ glutting glut
 gnawn gnaw
 goes_deep go_deep
 going_deep go_deep
-gollied golly
 gone go
 gone_deep go_deep
-goose-stepped goose-step
-goose-stepping goose-step
 got get
-got_lost get_lost
 got_started get_started
 gotten get
-gotten_lost get_lost
 grabbed grab
 grabbing grab
 gratified gratify
@@ -873,41 +736,24 @@ grovelling grovel
 grown grow
 grubbed grub
 grubbing grub
-guarantied guaranty
-gullied gully
 gummed gum
 gumming gum
 gunned gun
 gunning gun
 gypped gyp
 gypping gyp
-hacksawn hacksaw
 had have
-had_a_feeling have_a_feeling
-had_left have_left
-had_the_feeling have_the_feeling
 hammed ham
 hamming ham
 hamstrung hamstring
-hand-knitted hand-knit
-hand-knitting hand-knit
-handfed handfeed
 handicapped handicap
 handicapping handicap
-handselled handsel
-handselling handsel
 harried harry
 has have
-has_a_feeling have_a_feeling
-has_left have_left
-has_the_feeling have_the_feeling
 hatchelled hatchel
 hatchelling hatchel
 hatted hat
 hatting hat
-having_a_feeling have_a_feeling
-having_left have_left
-having_the_feeling have_the_feeling
 heard hear
 hedgehopped hedgehop
 hedgehopping hedgehop
@@ -919,32 +765,20 @@ hiccupped hiccup
 hiccupping hiccup
 hid hide
 hidden hide
-high-hatted high-hat
-high-hatting high-hat
-hinnied hinny
 hitting hit
 hobbed hob
 hobbing hob
 hobnobbed hobnob
 hobnobbing hobnob
-hocus-pocussed hocus-pocus
-hocus-pocussing hocus-pocus
-hocussed hocus
-hocussing hocus
 hogged hog
 hogging hog
-hogtying hogtie
 honied honey
 hopped hop
 hopping hop
 horrified horrify
 horsewhipped horsewhip
 horsewhipping horsewhip
-houselled housel
-houselling housel
 hove heave
-hovelled hovel
-hovelling hovel
 hugged hug
 hugging hug
 humbugged humbug
@@ -963,7 +797,6 @@ impanelling impanel
 impelled impel
 impelling impel
 implied imply
-inbred inbreed
 incurred incur
 incurring incur
 indemnified indemnify
@@ -976,20 +809,15 @@ inlaid inlay
 insetting inset
 inspanned inspan
 inspanning inspan
-installed instal install
-installing instal install
+installed instal
+installed install
+installing instal
+installing install
 intensified intensify
 interbred interbreed
-intercropped intercrop
-intercropping intercrop
-intercutting intercut
-interlaid interlay
-interlapped interlap
-interlapping interlap
 intermarried intermarry
 intermitted intermit
 intermitting intermit
-interpled interplead
 interred inter
 interring inter
 interstratified interstratify
@@ -999,8 +827,6 @@ intromitted intromit
 intromitting intromit
 inwove inweave
 inwoven inweave
-inwrapped inwrap
-inwrapping inwrap
 is be
 jabbed jab
 jabbing jab
@@ -1014,8 +840,6 @@ jarred jar
 jarring jar
 jellied jelly
 jellified jellify
-jemmied jemmy
-jerry-built jerry-build
 jetted jet
 jetting jet
 jewelled jewel
@@ -1029,8 +853,6 @@ jitterbugged jitterbug
 jitterbugging jitterbug
 jobbed job
 jobbing job
-jog-trotted jog-trot
-jog-trotting jog-trot
 jogged jog
 jogging jog
 joined_battle join_battle
@@ -1043,10 +865,6 @@ jollied jolly
 jollified jollify
 jotted jot
 jotting jot
-joy-ridden joy-ride
-joy-rode joy-ride
-joypopped joypop
-joypopping joypop
 jugged jug
 jugging jug
 jumped_off jump_off
@@ -1055,14 +873,9 @@ jumps_off jump_off
 justified justify
 jutted jut
 jutting jut
-kenned ken
 kennelled kennel
 kennelling kennel
-kenning ken
-kent ken
 kept keep
-kernelled kernel
-kernelling kernel
 kidded kid
 kidding kid
 kidnapped kidnap
@@ -1077,20 +890,12 @@ knelt kneel
 knew know
 knitted knit
 knitting knit
-knobbed knob
-knobbing knob
 knotted knot
 knotting knot
 known know
-ko'd ko
-ko'ing ko
-ko's ko
 labelled label
 labelling label
 laden lade
-ladyfied ladify
-ladyfies ladify
-ladyfying ladify
 lagged lag
 lagging lag
 laid lay
@@ -1102,22 +907,14 @@ lamming lam
 lapidified lapidify
 lapped lap
 lapping lap
-laurelled laurel
-laurelling laurel
 lay lie
-layed_for lie_for
-laying_for lie_for
-lays_for lie_for
 leant lean
 leapfrogged leapfrog
 leapfrogging leapfrog
 leapt leap
 learnt learn
-leaves_undone leave_undone
-leaving_undone leave_undone
 led lead
 left leave
-left_undone leave_undone
 lent lend
 letting let
 levelled level
@@ -1126,8 +923,6 @@ levied levy
 libelled libel
 libelling libel
 lignified lignify
-lipped lip
-lipping lip
 liquefied liquefy
 liquified liquify
 lit light
@@ -1136,9 +931,6 @@ lobbied lobby
 lobbing lob
 logged log
 logging log
-looked_towards look_towards
-looking_towards look_towards
-looks_towards look_towards
 lopped lop
 lopping lop
 lost lose
@@ -1146,12 +938,7 @@ lotted lot
 lotting lot
 lugged lug
 lugging lug
-lullabied lullaby
 lying lie
-machine-gunned machine-gun
-machine-gunning machine-gun
-madded mad
-madding mad
 made make
 magnified magnify
 manned man
@@ -1172,31 +959,20 @@ marvelling marvel
 matted mat
 matting mat
 meant mean
-medalled medal
-medalling medal
 met meet
 metalled metal
 metalling metal
 metrified metrify
-might may
-militated_against militate_against
-militates_against militate_against
-militating_against militate_against
 mimicked mimic
 mimicking mimic
 minified minify
 misapplied misapply
-misbecame misbecome
 miscarried miscarry
 misdealt misdeal
-misfitted misfit
-misfitting misfit
 misgave misgive
 misgiven misgive
-mishitting mishit
 mislaid mislay
 misled mislead
-mispled misplead
 misspelt misspell
 misspent misspend
 mistaken mistake
@@ -1219,9 +995,7 @@ mudding mud
 mugged mug
 mugging mug
 multiplied multiply
-mummed mum
 mummified mummify
-mumming mum
 mutinied mutiny
 mystified mystify
 nabbed nab
@@ -1232,22 +1006,13 @@ napped nap
 napping nap
 netted net
 netting net
-nibbed nib
-nibbing nib
 nickelled nickel
 nickelling nickel
-nid-nodded nid-nod
-nid-nodding nid-nod
-nidified nidify
-nigrified nigrify
 nipped nip
 nipping nip
 nitrified nitrify
 nodded nod
 nodding nod
-non-prossed non-pros
-non-prosses non-pros
-non-prossing non-pros
 nonplussed nonplus
 nonplusses nonplus
 nonplussing nonplus
@@ -1265,7 +1030,6 @@ omitting omit
 ossified ossify
 outbidden outbid
 outbidding outbid
-outbred outbreed
 outcried outcry
 outcropped outcrop
 outcropping outcrop
@@ -1276,17 +1040,11 @@ outdrew outdraw
 outfitted outfit
 outfitting outfit
 outfought outfight
-outgassed outgas
-outgasses outgas
-outgassing outgas
 outgeneralled outgeneral
 outgeneralling outgeneral
 outgone outgo
 outgrew outgrow
 outgrown outgrow
-outlaid outlay
-outmanned outman
-outmanning outman
 outputted output
 outputting output
 outran outrun
@@ -1294,14 +1052,11 @@ outridden outride
 outrode outride
 outrunning outrun
 outshone outshine
-outshot outshoot
 outsold outsell
 outspanned outspan
 outspanning outspan
-outstood outstand
 outstripped outstrip
 outstripping outstrip
-outthought outthink
 outwent outgo
 outwitted outwit
 outwitting outwit
@@ -1309,11 +1064,8 @@ outwore outwear
 outworn outwear
 overbidden overbid
 overbidding overbid
-overblew overblow
-overblown overblow
 overbore overbear
 overborne overbear
-overbuilt overbuild
 overcame overcome
 overcropped overcrop
 overcropping overcrop
@@ -1324,7 +1076,8 @@ overdrew overdraw
 overdriven overdrive
 overdrove overdrive
 overflew overfly
-overflown overflow overfly
+overflown overflow
+overflown overfly
 overgrew overgrow
 overgrown overgrow
 overheard overhear
@@ -1335,24 +1088,18 @@ overlapped overlap
 overlapping overlap
 overlay overlie
 overlying overlie
-overmanned overman
-overmanning overman
 overpaid overpay
-overpast overpass
 overran overrun
 overridden override
 overrode override
 overrunning overrun
 oversaw oversee
 overseen oversee
-oversetting overset
 oversewn oversew
 overshot overshoot
 oversimplified oversimplify
 overslept oversleep
-oversold oversell
 overspent overspend
-overspilt overspill
 overstepped overstep
 overstepping overstep
 overtaken overtake
@@ -1361,7 +1108,6 @@ overthrown overthrow
 overtook overtake
 overtopped overtop
 overtopping overtop
-overwound overwind
 overwritten overwrite
 overwrote overwrite
 pacified pacify
@@ -1371,7 +1117,6 @@ paid pay
 palled pal
 palling pal
 palsied palsy
-pandied pandy
 panelled panel
 panelling panel
 panicked panic
@@ -1386,10 +1131,6 @@ parodied parody
 parried parry
 partaken partake
 partook partake
-pasquil pasquinade
-pasquilled pasquinade
-pasquilling pasquinade
-pasquils pasquinade
 patrolled patrol
 patrolling patrol
 patted pat
@@ -1403,8 +1144,6 @@ pencilling pencil
 penned pen
 penning pen
 pent pen
-pepped pep
-pepping pep
 permitted permit
 permitting permit
 personified personify
@@ -1413,29 +1152,18 @@ petted pet
 pettifogged pettifog
 pettifogging pettifog
 petting pet
-phantasied phantasy
 photocopied photocopy
-photomapped photomap
-photomapping photomap
-photosetting photoset
-physicked physic
-physicking physic
 picnicked picnic
 picnicking picnic
 pigged pig
 pigging pig
 pilloried pillory
-pinch-hitting pinch-hit
 pinned pin
 pinning pin
 pipped pip
 pipping pip
 pistol-whipped pistol-whip
 pistol-whipping pistol-whip
-pistolled pistol
-pistolling pistol
-pitapatted pitapat
-pitapatting pitapat
 pitied pity
 pitted pit
 pitting pit
@@ -1443,9 +1171,6 @@ planned plan
 planning plan
 platted plat
 platting plat
-played_a_part play_a_part
-playing_a_part play_a_part
-plays_a_part play_a_part
 pled plead
 plied ply
 plodded plod
@@ -1465,20 +1190,14 @@ popping pop
 potted pot
 potting pot
 preachified preachify
-precancelled precancel
-precancelling precancel
 preferred prefer
 preferring prefer
 preoccupied preoccupy
 prepaid prepay
-presignified presignify
 pretermitted pretermit
 pretermitting pretermit
-prettied pretty
 prettified prettify
 pried pry
-prigged prig
-prigging prig
 primmed prim
 primming prim
 prodded prod
@@ -1486,19 +1205,12 @@ prodding prod
 programmed program
 programmes program
 programming program
-prologed prologue
-prologing prologue
-prologs prologue
 propelled propel
 propelling propel
 prophesied prophesy
 propped prop
 propping prop
 proven prove
-pubbed pub
-pubbing pub
-pugged pug
-pugging pug
 pummelled pummel
 pummelling pummel
 punned pun
@@ -1506,8 +1218,6 @@ punning pun
 pupped pup
 pupping pup
 purified purify
-put-putted put-put
-put-putting put-put
 putrefied putrefy
 puttied putty
 putting put
@@ -1516,7 +1226,6 @@ quantified quantify
 quarrelled quarrel
 quarrelling quarrel
 quarried quarry
-quartersawn quartersaw
 queried query
 quick-froze quick-freeze
 quick-frozen quick-freeze
@@ -1547,9 +1256,6 @@ ratted rat
 ratting rat
 ravelled ravel
 ravelling ravel
-razor-cutting razor-cut
-re-trod re-tread
-re-trodden re-tread
 rebelled rebel
 rebelling rebel
 rebuilt rebuild
@@ -1564,10 +1270,6 @@ recopied recopy
 rectified rectify
 recurred recur
 recurring recur
-red-pencilled red-pencil
-red-pencilling red-pencil
-redded red redd
-redding red redd
 redid redo
 redone redo
 referred refer
@@ -1590,16 +1292,13 @@ rent rend
 repaid repay
 repelled repel
 repelling repel
-replevied replevy
 replied reply
 repotted repot
 repotting repot
 reran rerun
 rerunning rerun
-resat resit
 resetting reset
 resewn resew
-resitting resit
 retaken retake
 rethought rethink
 retold retell
@@ -1649,8 +1348,6 @@ rotting rot
 rough-dried rough-dry
 rough-hewn rough-hew
 rove reeve
-rowelled rowel
-rowelling rowel
 rubbed rub
 rubbing rub
 rung ring
@@ -1661,9 +1358,6 @@ saccharified saccharify
 sagged sag
 sagging sag
 said say
-salaried salary
-salified salify
-sallied sally
 sanctified sanctify
 sandbagged sandbag
 sandbagging sandbag
@@ -1677,8 +1371,6 @@ satisfied satisfy
 savvied savvy
 saw see
 sawn saw
-scagged scag
-scagging scag
 scanned scan
 scanning scan
 scarified scarify
@@ -1686,7 +1378,6 @@ scarred scar
 scarring scar
 scatted scat
 scatting scat
-scorified scorify
 scragged scrag
 scragging scrag
 scrammed scram
@@ -1696,13 +1387,12 @@ scrapping scrap
 scried scry
 scrubbed scrub
 scrubbing scrub
-scrummed scrum
-scrumming scrum
 scudded scud
 scudding scud
 scummed scum
 scumming scum
 scurried scurry
+seed seed
 seen see
 sent send
 setting set
@@ -1715,22 +1405,16 @@ shakes_hands shake_hands
 shaking_hands shake_hands
 shammed sham
 shamming sham
-sharecropped sharecrop
-sharecropping sharecrop
 shat shit
 shaven shave
+shed shed
 shedding shed
 shellacked shellac
 shellacking shellac
-shent shend
 shewn shew
 shied shy
-shikarred shikar
-shikarring shikar
 shillyshallied shillyshally
-shimmed shim
 shimmied shimmy
-shimming shim
 shinned shin
 shinning shin
 shipped ship
@@ -1744,18 +1428,12 @@ shook_hands shake_hands
 shopped shop
 shopping shop
 shot shoot
-shotgunned shotgun
-shotgunning shotgun
-shotted shot
-shotting shot
 shovelled shovel
 shovelling shovel
 shown show
 shrank shrink
 shredded shred
 shredding shred
-shrink-wrapped shrink-wrap
-shrink-wrapping shrink-wrap
 shrivelled shrivel
 shrivelling shrivel
 shriven shrive
@@ -1769,8 +1447,6 @@ shunning shun
 shutting shut
 sicked sic
 sicking sic
-sideslipped sideslip
-sideslipping sideslip
 sidestepped sidestep
 sidestepping sidestep
 sightsaw sightsee
@@ -1778,38 +1454,26 @@ sightseen sightsee
 signalled signal
 signalling signal
 signified signify
-silicified silicify
 simplified simplify
-singing sing singe
-single-stepped single-step
-single-stepping single-step
+singing sing
+singing singe
 sinned sin
 sinning sin
 sipped sip
 sipping sip
 sitting sit
-skellied skelly
-skenned sken
-skenning sken
-sketted sket
-sketting sket
 ski'd ski
 skidded skid
 skidding skid
 skimmed skim
 skimming skim
-skin-popped skin-pop
-skin-popping skin-pop
 skinned skin
 skinning skin
 skinny-dipped skinny-dip
 skinny-dipping skinny-dip
 skipped skip
 skipping skip
-skivvied skivvy
 skydove skydive
-slabbed slab
-slabbing slab
 slagged slag
 slagging slag
 slain slay
@@ -1851,8 +1515,6 @@ snagged snag
 snagging snag
 snapped snap
 snapping snap
-snedded sned
-snedding sned
 snipped snip
 snipping snip
 snivelled snivel
@@ -1862,8 +1524,6 @@ snogging snog
 snubbed snub
 snubbing snub
 snuck sneak
-snugged snug
-snugging snug
 sobbed sob
 sobbing sob
 sodded sod
@@ -1871,17 +1531,11 @@ sodding sod
 soft-pedalled soft-pedal
 soft-pedalling soft-pedal
 sold sell
-solemnified solemnify
 solidified solidify
-soothsaid soothsay
 sopped sop
 sopping sop
 sought seek
 sown sow
-spagged spag
-spagging spag
-spancelled spancel
-spancelling spancel
 spanned span
 spanning span
 sparred spar
@@ -1907,13 +1561,10 @@ splitting split
 spoilt spoil
 spoke speak
 spoken speak
-spoon-fed spoon-feed
 spotlit spotlight
 spotted spot
 spotting spot
 sprang spring
-sprigged sprig
-sprigging sprig
 sprung spring
 spudded spud
 spudding spud
@@ -1922,30 +1573,21 @@ spurred spur
 spurring spur
 squatted squat
 squatting squat
-squibbed squib
-squibbing squib
-squidded squid
-squidding squid
 squilgee squeegee
 stabbed stab
 stabbing stab
-stall-fed stall-feed
 stank stink
 starred star
 starring star
 steadied steady
-stellified stellify
 stemmed stem
 stemming stem
-stems_from stem_from
 stencilled stencil
 stencilling stencil
 stepped step
 stepping step
 stetted stet
 stetting stet
-stied sty
-stilettoeing stiletto
 stirred stir
 stirring stir
 stole steal
@@ -1953,9 +1595,6 @@ stolen steal
 stood stand
 stopped stop
 stopping stop
-storied story
-stotted stot
-stotting stot
 stove stave
 strapped strap
 strapping strap
@@ -1969,7 +1608,6 @@ strode stride
 stropped strop
 stropping strop
 strove strive
-strown strow
 struck strike
 strummed strum
 strumming strum
@@ -1983,8 +1621,6 @@ studded stud
 studding stud
 studied study
 stultified stultify
-stummed stum
-stumming stum
 stung sting
 stunk stink
 stunned stun
@@ -1993,15 +1629,10 @@ stupefied stupefy
 stymying stymie
 subbed sub
 subbing sub
-subjectified subjectify
 subletting sublet
 submitted submit
 submitting submit
-subtotalled subtotal
-subtotalling subtotal
 sullied sully
-sulphuretted sulphuret
-sulphuretting sulphuret
 summed sum
 summing sum
 sung sing
@@ -2038,27 +1669,15 @@ swotting swot
 swum swim
 swung swing
 syllabified syllabify
-symbolled symbol
-symbolling symbol
-tabbed tab
-tabbing tab
 tagged tag
 tagging tag
 taken take
-taken_a_side take_a_side
 taken_pains take_pains
-taken_steps take_steps
-takes_a_side take_a_side
 takes_pains take_pains
-takes_steps take_steps
-taking_a_side take_a_side
 taking_pains take_pains
-taking_steps take_steps
 talcked talc
 talcking talc
 tallied tally
-tally-ho'd tally-ho
-tammied tammy
 tanned tan
 tanning tan
 tapped tap
@@ -2066,17 +1685,10 @@ tapping tap
 tarred tar
 tarried tarry
 tarring tar
-tasselled tassel
-tasselling tassel
 tatted tat
 tatting tat
 taught teach
 taxying taxi
-teaselled teasel
-teaselling teasel
-tedded ted
-tedding ted
-tepefied tepefy
 terrified terrify
 testified testify
 thinking_the_world_of think_the_world_of
@@ -2113,15 +1725,11 @@ togged tog
 togging tog
 told tell
 took take
-took_a_side take_a_side
 took_pains take_pains
-took_steps take_steps
 topped top
 topping top
 tore tear
 torn tear
-torrefied torrefy
-torrify torrefy
 totalled total
 totalling total
 totted tot
@@ -2141,15 +1749,11 @@ transferred transfer
 transferring transfer
 transfixt transfix
 tranship transship
-transhipped tranship
-transhipping tranship
 transmitted transmit
 transmitting transmit
 transmogrified transmogrify
 transshipped transship
 transshipping transship
-trapanned trapan
-trapanning trapan
 trapped trap
 trapping trap
 travelled travel
@@ -2160,16 +1764,12 @@ trekking trek
 trepanned trepan
 trepanning trepan
 tried try
-trigged trig
-trigging trig
 trimmed trim
 trimming trim
 tripped trip
 tripping trip
 trod tread
 trodden tread
-trogged trog
-trogging trog
 trotted trot
 trotting trot
 trowelled trowel
@@ -2177,12 +1777,8 @@ trowelling trowel
 tugged tug
 tugging tug
 tumefied tumefy
-tunned tun
 tunnelled tunnel
 tunnelling tunnel
-tunning tun
-tupped tup
-tupping tup
 tut-tutted tut-tut
 tut-tutting tut-tut
 twigged twig
@@ -2201,28 +1797,20 @@ unbarred unbar
 unbarring unbar
 unbent unbend
 unbound unbind
-uncapped uncap
-uncapping uncap
 unclad unclothe
 unclogged unclog
 unclogging unclog
 underbidding underbid
-underbought underbuy
 undercutting undercut
-underfed underfeed
 undergirt undergird
 undergone undergo
 underlaid underlay
 underlain underlie
 underlay underlie
-underletting underlet
 underlying underlie
 underpaid underpay
 underpinned underpin
 underpinning underpin
-underpropped underprop
-underpropping underprop
-undersetting underset
 undershot undershoot
 undersold undersell
 understood understand
@@ -2239,75 +1827,33 @@ unfitting unfit
 unfroze unfreeze
 unfrozen unfreeze
 unified unify
-unkennelled unkennel
-unkennelling unkennel
-unknitted unknit
-unknitting unknit
-unlaid unlay
 unlearnt unlearn
 unmade unmake
 unmanned unman
 unmanning unman
-unpegged unpeg
-unpegging unpeg
 unpinned unpin
 unpinning unpin
 unplugged unplug
 unplugging unplug
 unravelled unravel
 unravelling unravel
-unrigged unrig
-unrigging unrig
-unripped unrip
-unripping unrip
-unrove unreeve
 unsaid unsay
-unshipped unship
-unshipping unship
-unslung unsling
-unsnapped unsnap
-unsnapping unsnap
-unspoke unspeak
-unspoken unspeak
-unsteadied unsteady
-unstepped unstep
-unstepping unstep
-unstopped unstop
-unstopping unstop
 unstrung unstring
-unstuck unstick
-unswore unswear
-unsworn unswear
 untaught unteach
-unthought unthink
-untidied untidy
-untrod untread
-untrodden untread
 untying untie
 unwound unwind
 unwrapped unwrap
 unwrapping unwrap
 unzipped unzip
 unzipping unzip
-upbuilt upbuild
 upheld uphold
 uphove upheave
 upped up
-uppercutting uppercut
 upping up
 uprisen uprise
 uprose uprise
 upsetting upset
-upsprang upspring
-upsprung upspring
-upswept upsweep
-upswollen upswell
-upswung upswing
-vagged vag
-vagging vag
 varied vary
-vatted vat
-vatting vat
 verbified verbify
 verified verify
 versified versify
@@ -2322,10 +1868,7 @@ vitriolling vitriol
 vivified vivify
 vying vie
 wadded wad
-waddied waddy
 wadding wad
-wadsetted wadset
-wadsetting wadset
 wagged wag
 wagging wag
 wanned wan
@@ -2333,7 +1876,6 @@ wanning wan
 warred war
 warring war
 was be
-water-ski'd water-ski
 waylaid waylay
 wearied weary
 weatherstripped weatherstrip
@@ -2342,6 +1884,7 @@ webbed web
 webbing web
 wedded wed
 wedding wed
+weed weed
 went go
 went_deep go_deep
 wept weep
@@ -2360,25 +1903,16 @@ whipping whip
 whipsawn whipsaw
 whirred whir
 whirring whir
-whistle-stopped whistle-stop
-whistle-stopping whistle-stop
 whizzed whiz
 whizzes whiz
 whizzing whiz
 whopped whop
 whopping whop
-wigged wig
-wigging wig
 wigwagged wigwag
 wigwagging wigwag
-wildcatted wildcat
-wildcatting wildcat
 window-shopped window-shop
 window-shopping window-shop
 winning win
-winterfed winterfeed
-wiredrawn wiredraw
-wiredrew wiredraw
 withdrawn withdraw
 withdrew withdraw
 withheld withhold
@@ -2386,8 +1920,6 @@ withstood withstand
 woke wake
 woken wake
 won win
-wonned won
-wonning won
 wore wear
 worn wear
 worried worry
@@ -2398,7 +1930,6 @@ wove weave
 woven weave
 wrapped wrap
 wrapping wrap
-wried wry
 written write
 wrote write
 wrought work
@@ -2407,8 +1938,6 @@ yakked yak
 yakking yak
 yapped yap
 yapping yap
-ycleped clepe
-yclept clepe
 yenned yen
 yenning yen
 yodelled yodel
