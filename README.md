@@ -1,5 +1,6 @@
 ![alt](./assets/logo_full_white.png)
-![version](https://img.shields.io/badge/version-1.1.0-blue)  
+![version](https://img.shields.io/badge/version-1.1.0-blue) ![license](https://img.shields.io/github/license/Thertzlor/entropy-wordsmith)
+
 Entropy Wordsmith is a passphrase/natural language password generator inspired by Diceware but much more complex and grandiloquent, powered by WordNet.
 
 # Mission Statement
@@ -80,7 +81,7 @@ The WordNet database contains obscenities, religious and politically charged ter
 Be prepared to encounter the occasional *spicy* password.
 
 # The Scale and the Math
-If we simply chose a random word from each list in a static order we'd get $124006 * 21634 * 1162 * 4489 = 139841526755179472$ possible combinations or 57 bits of entropy
+If we simply chose a random word from each list in a static order we'd get $124006 * 21634 * 1162 * 4489 = 139841526755179472$ possible combinations or 57 bits of entropy.
 
 But of course we're not done here, standard output produces something much stronger, let's break it down:
 
